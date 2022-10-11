@@ -47,7 +47,23 @@ class App extends Component {
     // console.log(F_BG_SLATE[1]);
     return (
       <React.Fragment>
-        <p style={F_BG_SLATE[0]}>s</p>
+        <h1 className="text-gray-100">
+          Hello world!
+        </h1>
+
+        <div class="flex ...">
+        <div class="flex-none w-14 h-14 ...">
+          01
+        </div>
+        <div class="grow h-14 ...">
+          02
+        </div>
+        <div class="flex-none w-14 h-14 ...">
+          03
+        </div>
+      </div>
+
+        {/* <p style={F_BG_SLATE[0]}>s</p>
         <p style={F_BG_SLATE[1]}>s</p>
         <p style={F_BG_SLATE[2]}>s</p>
         <p style={F_BG_SLATE[3]}>s</p>
@@ -66,7 +82,7 @@ class App extends Component {
         <p style={F_BG_GRAY[6]}>s</p>
         <p style={F_BG_GRAY[7]}>s</p>
         <p style={F_BG_GRAY[8]}>s</p>
-        <p style={F_BG_GRAY[9]}>s</p>
+        <p style={F_BG_GRAY[9]}>s</p> */}
         {/* {console.log(FBGSLATE0)} */}
         {/* <ToastContainer />
         <NavBar />
