@@ -5,7 +5,7 @@ const ContainerHeader = ({
 }) => (
   <div 
     className={style}>
-    <p>{title}</p>
+    {title ? <p>{title}</p> : null}
   </div>
   );
 

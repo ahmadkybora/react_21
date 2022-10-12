@@ -5,8 +5,10 @@ import React from "react";
 import { Formik } from "formik";
 
 const Form = ({
-    initialValues, onSubmit, validationSchema, children,
+    divStyle, initialValues, onSubmit, validationSchema, children,
 }) => (
+  divStyle ? 
+  <div className={divStyle}> 
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
@@ -14,19 +16,16 @@ const Form = ({
     >
       {() => <>{children}</>}
     </Formik>
+  </div>
+  : 
+  <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
+      {() => <>{children}</>}
+  </Formik>
 );
 
-// Header.defaultProps = {
-//   styleName: "",
-//   header: null,
-//   title: null,
-// };
-
-// Header.propTypes = {
-//   children: PropTypes.node.isRequired,
-//   header: PropTypes.node,
-//   styleName: PropTypes.string,
-//   title: PropTypes.string,
-// };
 
 export default Form;
