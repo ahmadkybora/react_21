@@ -1,103 +1,54 @@
 import './App.css';
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
-import Home from './components/home';
-import Login from './components/auth/login';
-import Register from './components/auth/register';
-import About from './components/about';
-import NavBar from './components/navbar';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Users from './components/panel/users/users';
-import EditUser from './components/panel/users/editUsers';
-import Products from './components/panel/products';
-import { LogoutRoute } from './middlewares/isLogout';
-import { LoginRoute } from './middlewares/isLogin';
-import { ProtectedRouteAdmin } from './middlewares/isAdmin';
-import logout from './components/auth/logout';
-import SideBar from './components/sidebar';
-import Dashboard from './components/panel/dashboard';
-import Panel from './components/panel';
+import Widget from './components/Widget';
+import Header from './components/Header';
+import Form from './components/Form';
+import Input from './components/Input';
+import Button from './components/Button';
+import ContainerHeader from './components/ContainerHeader';
 
-import { FBGSLATE5 } from './utils/color';
-import { slateColors
- } from './utils/scss/colors/vars';
-import { F_BG_SLATE, F_BG_GRAY } from './utils/scss/colors';
 class App extends Component {
-
-  // state = {
-  //   isAdmin: localStorage.getItem('isAdmin'),
-  //   loggedIn: localStorage.getItem('token')
-  // }
-  loop = () => {
-      for (var i = 0; i < 10; i++) {
-          <p style={F_BG_SLATE[i]}>s</p>
-      } 
-  }
   render (){
-    // const { isAdmin, token, loggedIn } = this.state;
-    // Object.entries(colors).map(color => {
-    //   console.log(color[1]);
-    //   export default FF = color[1];
-    // })
-    // let F_BG_SLATE = [];
-    // Object.values(slateColors).forEach(color => {
-    //   F_BG_SLATE.push(color)
-    // })
-    // console.log(F_BG_SLATE[1]);
     return (
       <React.Fragment>
-        <h1 className="text-gray-100">
-          Hello world!
-        </h1>
-
-        <div class="flex ...">
-        <div class="flex-none w-14 h-14 ...">
-          01
-        </div>
-        <div class="grow h-14 ...">
-          02
-        </div>
-        <div class="flex-none w-14 h-14 ...">
-          03
-        </div>
-      </div>
-
-        {/* <p style={F_BG_SLATE[0]}>s</p>
-        <p style={F_BG_SLATE[1]}>s</p>
-        <p style={F_BG_SLATE[2]}>s</p>
-        <p style={F_BG_SLATE[3]}>s</p>
-        <p style={F_BG_SLATE[4]}>s</p>
-        <p style={F_BG_SLATE[5]}>s</p>
-        <p style={F_BG_SLATE[6]}>s</p>
-        <p style={F_BG_SLATE[7]}>s</p>
-        <p style={F_BG_SLATE[8]}>s</p>
-        <p style={F_BG_SLATE[9]}>s</p>
-        <p style={F_BG_GRAY[0]}>s</p>
-        <p style={F_BG_GRAY[1]}>s</p>
-        <p style={F_BG_GRAY[2]}>s</p>
-        <p style={F_BG_GRAY[3]}>s</p>
-        <p style={F_BG_GRAY[4]}>s</p>
-        <p style={F_BG_GRAY[5]}>s</p>
-        <p style={F_BG_GRAY[6]}>s</p>
-        <p style={F_BG_GRAY[7]}>s</p>
-        <p style={F_BG_GRAY[8]}>s</p>
-        <p style={F_BG_GRAY[9]}>s</p> */}
-        {/* {console.log(FBGSLATE0)} */}
-        {/* <ToastContainer />
-        <NavBar />
-        <main className="container-fluid">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <LogoutRoute path="/login" component={Login} />
-            <LogoutRoute path="/register" component={Register} />
-            <LoginRoute path="/logout" component={logout} />
-            <Route path="/about" component={About} />
-            
-            <ProtectedRouteAdmin path="/panel" component={Panel} />
-
-          </Switch> 
-        </main> */}
+        <Header>
+            React and Tailwind CSS in action1
+          </Header>
+        <Widget>
+            <p>salam</p>
+        </Widget>
+        <Widget>
+          <ContainerHeader 
+            style="text-2xl font-bold text-center"
+            title="Login to your account" 
+          />
+            <div class="flex items-center justify-center min-h-screen bg-gray-100">
+              <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
+                  <Form>
+                      <Input 
+                        label="UserName"
+                        divStyle="mt-4"
+                        style="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+                        name="username"
+                        type="text"
+                      />
+                      <Input 
+                        label="Password"
+                        divStyle="mt-4"
+                        style="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+                        name="password"
+                        type="password"
+                      />
+                      <Button
+                        divStyle="flex items-baseline justify-between"
+                        style="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
+                        type="submit"
+                        name="Login">
+                      </Button>
+                  </Form>
+            </div>
+          </div>
+        </Widget>
       </React.Fragment>
     );
   }
