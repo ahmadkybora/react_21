@@ -9,11 +9,12 @@ import React, { Component } from 'react';
 // import SelectOption from './components/SelectOption';
 // import TextArea from './components/TextArea';
 // import Search from './Ncomponents/Search';
-import { Button, Search } from './components'
+import { Button, Search, Alert, Accordion, Avatar, Badge } from './components'
 import JSONData from './components/Styles/styles.json';
-import { BtnCircleBlue, BtnCircleRed } from "./components/Styles";
+import { BtnCircleBlue, BtnCircleRed, AlertDanger } from "./components/Styles";
 
 class App extends Component {
+  // https://flowbite.com/docs/components
   state = {
     data: [
       "Material Tailwind HTML",
@@ -30,15 +31,34 @@ class App extends Component {
   render (){
     return (
       <React.Fragment>
+
+      <Badge 
+        divStyle="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+        style="font-medium"
+        />
+      <Avatar 
+        divStyle="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+        style="font-medium"
+        src=""
+        alt=""
+        />
+      <Accordion />
+      <Alert 
+        divStyle={`${AlertDanger}`}
+        style="font-medium"
+        title="Error"
+        description="is not good" 
+        />
+
       <Button
         divStyle="flex items-baseline justify-between"
-        style={BtnCircleBlue}
+        style={`bg-red-900 ${BtnCircleBlue}`}
         type="submit"
         name="Login" />
 
       <Button
         divStyle="flex items-baseline justify-between"
-        style={BtnCircleRed}
+        style={`ml-2 ${BtnCircleRed}`}
         type="submit"
         name="Login" />
 

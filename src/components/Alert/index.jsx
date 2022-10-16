@@ -1,18 +1,17 @@
 import React from "react";
 
-const Accoridian = ({
-    style, divStyle, name, type, ...otherProps
+const Alert = ({
+    style, divStyle, title, description, ...otherProps
 }) => (
   <div className={divStyle} >
-    <button 
+    <span 
         className={style} 
-        name={name}
-        type={type}
         {...otherProps}
     >
-        {name}
-    </button>
+      {title}
+    </span>
+    {description}
   </div>
 );
 
-export default Accoridian;
+export default Alert;

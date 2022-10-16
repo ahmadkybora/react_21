@@ -1,18 +1,14 @@
 import React from "react";
 
-const Accoridian = ({
+const Badge = ({
     style, divStyle, name, type, ...otherProps
 }) => (
   <div className={divStyle} >
-    <button 
-        className={style} 
-        name={name}
-        type={type}
-        {...otherProps}
-    >
-        {name}
-    </button>
+    <span 
+      class={style}>
+        Default
+    </span>
   </div>
 );
 
-export default Accoridian;
+export default Badge;
