@@ -1,0 +1,85 @@
+@import "../styles/box-shadow";
+.f-card {
+    width: 25%;
+    margin: 1%;
+    border: 1px gray solid;
+    border-radius: 10px;
+    text-align: center;
+    @extend .f-box-shadow-1;
+}
+
+.f-card-title {
+    padding: 1%;
+}
+
+.f-card-body {
+    padding: 1%;
+}
+
+.f-card-footer {
+    padding: 1%;
+}
+
+.f-card-text {
+    padding: 1%;
+}
+
+// .f-card-img{
+// }
+
+.card,
+.card-group {
+    margin-bottom: 30px;
+}
+
+.card {
+    box-shadow: 0 3px 9px 0 rgba(169, 184, 200, .15);
+    -webkit-box-shadow: 0 3px 9px 0 rgba(169, 184, 200, .15);
+    -moz-box-shadow: 0 3px 9px 0 rgba(169, 184, 200, .15);
+
+    .card-subtitle {
+        font-weight: $font-weight-light;
+        margin-bottom: 10px;
+        color: $text-muted;
+    }
+
+    .card-title {
+        position: relative;
+        font-weight: $font-weight-medium;
+        margin-bottom: 10px;
+        color:$gray-900;
+    }
+}
+
+@import "../styles/box-shadow";
+.f-card {
+    width: 25%;
+    margin: 1%;
+    border: 1px gray solid;
+    border-radius: 10px;
+    text-align: center;
+    @extend .f-box-shadow-1;
+}
+
+.f-card-title {
+    padding: 1%;
+}
+
+.f-card-body {
+    padding: 1%;
+}
+
+.f-card-footer {
+    padding: 1%;
+}
+
+.f-card-text {
+    padding: 1%;
+}
+
+.f-card-img{
+    background-color: aliceblue;
+    padding: 1%;
+    margin: 1%;
+    width: 90%;
+}

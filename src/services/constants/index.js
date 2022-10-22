@@ -1,0 +1,9 @@
+export const APPLICATION_JSON = "application/json";
+export const BASE_URL = `${process.env.REACT_APP_URL}api/`;
+export const BEARER = "Bearer ";
+export const CONTENT_TYPE = "Content-Type";
+export const MULTIPART_FORMDATA = "multipart/form-data";
+export const REFERER = window.location.origin;
+export const REFERER_POLICY = "Referrer-Policy";
+export const SOWCO = "strict-origin-when-cross-origin";
+export const TOKEN = localStorage.getItem("token");

@@ -9,6 +9,8 @@ export { default as Input } from "./Input";
 export { default as SelectOption } from "./SelectOption";
 export { default as TextArea } from "./TextArea";
 export { default as Widget } from "./Widget";
+export { default as DataTable } from "./Tables/DataTable";
+export { default as Modal } from "./Modal";
 
 export { default as Search } from "./modules/Search";
 export { default as Avatar } from "./modules/Avatar";

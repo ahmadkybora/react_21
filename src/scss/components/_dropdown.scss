@@ -1,0 +1,42 @@
+.dropdown-menu {
+    box-shadow: $dropdown-box-shadow;
+    -webkit-box-shadow: $dropdown-box-shadow;
+    -moz-box-shadow: $dropdown-box-shadow;
+}
+
+.f-dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.f-dropdown-btn{
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+// .f-dropdown-btn:hover, .f-dropdown-btn:focus {
+//     background-color: #2980B9;
+// }
+
+.f-dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(32, 26, 26, 0.2);
+    z-index: 1;
+}
+
+.f-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.f-dropdown-content a:hover {background-color: #ddd}

@@ -9,9 +9,23 @@ import React, { Component } from 'react';
 // import SelectOption from './components/SelectOption';
 // import TextArea from './components/TextArea';
 // import Search from './Ncomponents/Search';
-import { Button, Search, Alert, Accordion, Avatar, Badge } from './components'
+import { 
+  Button, 
+  Search, 
+  Alert, 
+  Accordion, 
+  Avatar, 
+  Badge, 
+  DataTable, 
+  Modal
+} from './components'
 import JSONData from './components/Styles/styles.json';
 import { BtnCircleBlue, BtnCircleRed, AlertDanger } from "./components/Styles";
+import { BTN_PRIMARY, BTN_SECONDARY } from './components/Button/Style';
+import Login from './modules/auth/Login';
+import { routes } from './routes';
+import { Route } from 'react-router-dom';
+import Article from './app/Article';
 
 class App extends Component {
   // https://flowbite.com/docs/components
@@ -23,6 +37,13 @@ class App extends Component {
       "Material Tailwind Angular",
       "Material Tailwind Svelte",
     ],
+    name: [
+      "fitstname",
+      "lastname",
+      "email",
+      "image",
+      "mobile",
+    ],
     gender: [
       "Male",
       "Famale",
@@ -31,8 +52,38 @@ class App extends Component {
   render (){
     return (
       <React.Fragment>
+        {console.log(routes)}
+        {/* {
+          routes.map((route) => (
+              <Route
+                path={route.path}
+                name={route.name}
+                component={route.component}
+              />
+          ))
+        } */}
+      <Modal 
+        name="click"
+        modalTitle="welcome"
+        modalBody={this.state.name}
+        btnClose="close"
+        // btnCloseColor="btn btn-danger"
+        />
 
-      <Badge 
+      <Button 
+        style={BTN_PRIMARY}
+        type="button"
+        name="Login"
+        />
+
+      <DataTable
+        style="font-medium"
+        title="Error"
+        thead={this.state.name}
+        tfoot={this.state.data}
+        />
+
+      {/* <Badge 
         divStyle="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
         style="font-medium"
         />
@@ -41,9 +92,10 @@ class App extends Component {
         style="font-medium"
         src=""
         alt=""
-        />
-      <Accordion />
-      <Alert 
+        /> */}
+      {/* <Accordion /> */}
+
+      {/* <Alert 
         divStyle={`${AlertDanger}`}
         style="font-medium"
         title="Error"
@@ -67,7 +119,7 @@ class App extends Component {
         style="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
         type="submit"
         name="Login"
-      />
+      /> */}
 
       </React.Fragment>
       // <React.Fragment> 

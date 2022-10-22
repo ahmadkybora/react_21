@@ -3,15 +3,14 @@ import React from "react";
 const Button = ({
     style, divStyle, name, type, ...otherProps
 }) => (
-  <div className={divStyle} >
-    <button 
-        className={style} 
-        name={name}
+  <div className={divStyle}>
+      <button 
         type={type}
+        className={style}
         {...otherProps}
-    >
+      >
         {name}
-    </button>
+      </button>
   </div>
 );
 

@@ -4,7 +4,7 @@ import Input from "../../components/Input";
 import Widget from "../../components/Widget";
 
 const Login = () => {
-    useEffect(() => {})
+    // useEffect(() => {})
     return (
         <Widget>
             <Form>
