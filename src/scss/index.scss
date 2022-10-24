@@ -1,16 +1,1 @@
-@import "components/index";
-@import "colors";
 @import "colors/index";
-@import "styles/general";
-@import "styles/flex";
-@import "styles/column";
-@import "responsive/index";
-body {
-    background-color: white;
-}
-
-@media only screen and (max-width: 500px) {
-    body {
-        background-color: red;
-    }
-}

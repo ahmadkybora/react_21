@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.scss';
 import React, { Component } from 'react';
 // import Widget from './components/Widget';
 // import Header from './components/Header';
@@ -26,6 +26,9 @@ import Login from './modules/auth/Login';
 import { routes } from './routes';
 import { Route } from 'react-router-dom';
 import Article from './app/Article';
+import { gray, yellow } from "./plugins/colors/vars";
+// import { F_GRAY_800 } from './plugins/colors';
+// import { F_GRAY_50 } from './plugins/colors';
 
 class App extends Component {
   // https://flowbite.com/docs/components
@@ -50,9 +53,10 @@ class App extends Component {
     ],
   }
   render (){
+    const style = { backgroundColor: yellow[900] }
     return (
       <React.Fragment>
-        {console.log(routes)}
+        {/* {console.log(F_GRAY_800)} */}
         {/* {
           routes.map((route) => (
               <Route
@@ -62,6 +66,7 @@ class App extends Component {
               />
           ))
         } */}
+        <p className="f-bg-red-4">salam</p>
       <Modal 
         name="click"
         modalTitle="welcome"
@@ -70,8 +75,9 @@ class App extends Component {
         // btnCloseColor="btn btn-danger"
         />
 
+      <button style={style}>ss</button>
       <Button 
-        style={BTN_PRIMARY}
+        style={style}
         type="button"
         name="Login"
         />
