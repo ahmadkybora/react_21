@@ -1,3 +1,4 @@
+import Dashboard from "../app/Panel/Dashboard";
 import Article from "../app/Article";
 import App from "../App";
 
@@ -29,6 +30,7 @@ import App from "../App";
 
 const routes = [
     // { path: "/", exact: true, element: <App /> },
+    { path: "/panel/dashboard", exact: true, element: <Dashboard /> },
     { path: "/article", exact: true, element: <Article /> },
     // { path: "/about", exact: true, element: <About /> },
     // { path: "/alerts", exact: true, element: <Alerts /> },

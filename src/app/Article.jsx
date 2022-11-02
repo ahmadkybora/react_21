@@ -1,5 +1,14 @@
 import React from "react";
-import { Playground, SubmitButton, UploadButton, ActionButton } from "../components";
+import { 
+  Playground,
+  SubmitButton, 
+  UploadButton, 
+  ActionButton, 
+  SelectOption, 
+  DataTable,
+  Header
+  // ActionSlider
+} from "../components";
 import SendIcon from '@mui/icons-material/Send';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import TextField from '@mui/material/TextField';
@@ -12,6 +21,10 @@ import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import NavigationIcon from '@mui/icons-material/Navigation';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const Article = () => {
     // const defaultProps = {
@@ -26,12 +39,33 @@ const Article = () => {
     // const [value, setValue] = React.useState(null);
     return(
         <div>
+            <Header />
+            {/* <ActionSlider 
+              aria-label="Temperature"
+              defaultValue={30}
+              valueLabelDisplay="auto"
+              step={10}
+              marks
+              min={10}
+              max={110}
+              /> */}
+            <DataTable 
+              labels={lables}
+              values={values}
+            />
+
+            <SelectOption 
+              values={selectOpt}
+              label="Age"
+              />
+
             <ActionButton 
               size="small"
               color="success"
               icon={<SendIcon />}
               />
-            <Box sx={{ '& > :not(style)': { m: 1 } }}>
+
+            {/* <Box sx={{ '& > :not(style)': { m: 1 } }}>
               <Fab color="f-txt-slate-8" aria-label="add">
                 <AddIcon />
               </Fab>
@@ -48,7 +82,8 @@ const Article = () => {
             </Box>
             <Checkbox 
               defaultChecked
-              />
+              /> */}
+
             <Playground 
               values={top100Films}
               label="footman"
@@ -69,35 +104,74 @@ const Article = () => {
             </Stack> */}
 
             <SubmitButton 
-                title="1"
-                variant="outlined"
-                color="success"
-                size="small"
-                style={{ marginTop: "20px" }}
-                onClick={() => alert("ok")}
-                startIcon={<PhotoCamera />}
-            />
+              title="1"
+              variant="outlined"
+              color="success"
+              size="small"
+              style={{ marginTop: "20px" }}
+              onClick={() => alert("ok")}
+              startIcon={<PhotoCamera />}
+              />
 
             <SubmitButton 
-                title="2"
-                variant="contained"
-                color="secondary"
-                size="small"
-                style={{ marginTop: "20px" }}
-                onClick={() => alert("ok")}
-                endIcon={<SendIcon />}
-            />
+              title="2"
+              variant="contained"
+              color="secondary"
+              size="small"
+              style={{ marginTop: "20px" }}
+              onClick={() => alert("ok")}
+              endIcon={<SendIcon />}
+              />
 
             <UploadButton 
-                title="click"
-                variant="contained"
-                size="small"
-                colorIcn="secondary"
-                icon={<PhotoCamera />}
-            />
+              title="click"
+              variant="contained"
+              size="small"
+              colorIcn="secondary"
+              icon={<PhotoCamera />}
+              />
         </div>
     )
 }
+
+const lables = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'firstName', headerName: 'First name', width: 130 },
+  { field: 'lastName', headerName: 'Last name', width: 130 },
+  {
+    field: 'age',
+    headerName: 'Age',
+    type: 'number',
+    width: 90,
+  },
+  {
+    field: 'fullName',
+    headerName: 'Full name',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (params) =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+];
+
+const values = [
+  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+];
+
+const selectOpt = [
+  { name: "abc", id: 1 }, 
+  { name: "efg", id: 2 }, 
+  { name: "hij", id: 3 }, 
+];
 
 const top100Films = [
     { title: 'The Shawshank Redemption', year: 1994 },
