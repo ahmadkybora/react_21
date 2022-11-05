@@ -1,6 +1,8 @@
 // import './App.scss';
 import React, { Component } from 'react';
 import { useRoutes } from "react-router-dom";
+import MainPanel from './layouts/Panel/MainPanel';
+
 // import { routes } from "../src/routes";
 
 // import Widget from './components/Widget';
@@ -34,10 +36,13 @@ import routes from './routes';
 // import { F_GRAY_50 } from './plugins/colors';
 
 const App = () => {
-  const routing = useRoutes(routes);
+  // const routing = useRoutes(routes);
   return (
     <React.Fragment>
-      <div>{routing}</div>
+      {/* {console.log()} */}
+      {/* <ProtectedRouteAdmin /> */}
+      <MainPanel />
+      {/* <div>{routing}</div> */}
     </React.Fragment>
   );
 }

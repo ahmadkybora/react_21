@@ -1,16 +1,16 @@
 import React from "react";
 import { 
-  Footer,
+    Footer,
 } from "../../../components";
-
+  
 import Sidebar from "../../../layouts/Panel/Sidebar";
 
-const Dashboard = () => {
+const Users = () => {
     return(
-        <div>
-            <p>dashboard</p>
+        <div style={{ backgroundColor: "red"}}>
+            <p>users</p>
         </div>
     )
 }
 
-export default Dashboard;
+export default Users;

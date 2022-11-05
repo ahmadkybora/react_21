@@ -1,6 +1,8 @@
 import Dashboard from "../app/Panel/Dashboard";
-import Article from "../app/Article";
-import App from "../App";
+import Users from "../app/Panel/Users";
+
+import Home from "../app/Site/Home";
+// import App from "../App";
 
 // import { lazy } from "react";
 // export const routes = [
@@ -30,8 +32,10 @@ import App from "../App";
 
 const routes = [
     // { path: "/", exact: true, element: <App /> },
+    { path: "/", exact: true, element: <Home /> },
     { path: "/panel/dashboard", exact: true, element: <Dashboard /> },
-    { path: "/article", exact: true, element: <Article /> },
+    { path: "/panel/users", exact: true, element: <Users /> },
+    // { path: "/article", exact: true, element: <Article /> },
     // { path: "/about", exact: true, element: <About /> },
     // { path: "/alerts", exact: true, element: <Alerts /> },
     // { path: "/badges", exact: true, element: <Badges /> },
