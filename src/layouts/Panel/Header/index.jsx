@@ -10,8 +10,16 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom";
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [
+  { name: 'Profile', path: '', icon: <InboxIcon /> }, 
+  { name: 'Account', path: '', icon: <InboxIcon /> }, 
+  { name: 'Dashboard', path: '', icon: <MailIcon /> }, 
+  { name: 'Logout', path: '', icon: <MailIcon /> },
+];
 
 const Header = ({ handleDrawerOpen }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -64,7 +72,10 @@ const Header = ({ handleDrawerOpen }) => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center">
+                    {setting.icon}
+                    <Link to={setting.path}>{setting.name}</Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

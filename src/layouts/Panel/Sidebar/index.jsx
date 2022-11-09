@@ -11,13 +11,12 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Header from "../Header";
 import { Link } from "react-router-dom";
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -39,8 +38,16 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 );
 
 const data = [
-    { name: 'Dashboard', path: 'panel/dashboard' }, 
-    { name: 'users', path: 'panel/users' }
+  { name: 'Dashboard', path: 'panel/dashboard', icon: <InboxIcon /> }, 
+  { name: 'Users', path: 'panel/users', icon: <MailIcon /> }, 
+  { name: 'Brands', path: 'panel/brands', icon: <MailIcon /> }, 
+  { name: 'Categories', path: 'panel/categories', icon: <MailIcon /> }, 
+  { name: 'Products', path: 'panel/products', icon: <MailIcon /> }, 
+  { name: 'Articles', path: 'panel/articles', icon: <MailIcon /> }, 
+  { name: 'Orders', path: 'panel/orders', icon: <MailIcon /> }, 
+  { name: 'Transactions', path: 'panel/transactions', icon: <MailIcon /> }, 
+  { name: 'Settings', path: 'panel/settings', icon: <MailIcon /> }, 
+  { name: 'Logout', path: 'panel/logout', icon: <MailIcon /> }, 
 ];
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -65,50 +72,47 @@ const Sidebar = () => {
 
   return (
     <React.Fragment>
-    <Header handleDrawerOpen={handleDrawerOpen} />
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <Main open={open}>
-        <DrawerHeader />
+      <Header handleDrawerOpen={handleDrawerOpen} />
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <Main open={open}>
+          <DrawerHeader />
 
-      </Main>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
+        </Main>
+        <Drawer
+          sx={{
             width: drawerWidth,
-          },
-        }}
-        variant="persistent"
-        anchor="right"
-        open={open}
-      >
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+            },
+          }}
+          variant="persistent"
+          anchor="left"
+          open={open}
+        >
 
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </DrawerHeader>
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </DrawerHeader>
 
-        <Divider />
+          <Divider />
             <List>
-            {data.map((text, index) => {
-                <ListItem key={text} disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <Link to={text.path}>{text.name}</Link>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text.name} />
-                    </ListItemButton>
+              {data.map((text, index) => (
+                <ListItem key={index} disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>{text.icon}</ListItemIcon>
+                    <Link to={text.path}>{text.name}</Link>
+                  </ListItemButton>
                 </ListItem>
-                })}
+              ))}
             </List>
-        <Divider />
+          <Divider />
 
-      </Drawer>
-    </Box>
+        </Drawer>
+      </Box>
     </React.Fragment>
   );
 }

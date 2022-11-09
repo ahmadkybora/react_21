@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 const Widget = ({ children, styleName, label, title, ...otherProps }) => {
   return (
-    <Card sx={{ maxWidth: 400 }}>
+    <Card sx={{ maxWidth: "100%" }}>
       <Typography 
         sx={{ fontSize: 25 }} 
         color="text.black" 

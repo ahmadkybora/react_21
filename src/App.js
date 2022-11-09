@@ -1,6 +1,6 @@
 // import './App.scss';
 import React, { Component } from 'react';
-import { useRoutes } from "react-router-dom";
+import { useRoutes, useHistory, useNavigate, useLocation } from "react-router-dom";
 import MainPanel from './layouts/Panel/MainPanel';
 
 // import { routes } from "../src/routes";
@@ -36,11 +36,16 @@ import routes from './routes';
 // import { F_GRAY_50 } from './plugins/colors';
 
 const App = () => {
+  // const location = useLocation();
+  // console.log(location.pathname);
+  // const navigate = useNavigate();
+  // console.log(navigate("http://localhost:3000/"));
   // const routing = useRoutes(routes);
   return (
     <React.Fragment>
       {/* {console.log()} */}
       {/* <ProtectedRouteAdmin /> */}
+      {/* {(location.pathname === "/panel") && <MainPanel />} */}
       <MainPanel />
       {/* <div>{routing}</div> */}
     </React.Fragment>

@@ -3,23 +3,33 @@ import {
   Widget,
   Footer,
 } from "../../../components";
-import { Route } from "react-router-dom";
+import { Routes ,Route } from 'react-router-dom';
 
 import Sidebar from "../Sidebar";
 import routes from "../../../routes";
+import Users from "../../../app/Panel/Users";
+import Dashboard from "../../../app/Panel/Dashboard";
+import Navbar from "../Navbar";
 
 const MainPanel = () => {
     return(
         <div>
             <Sidebar />
-                <Widget>
-                    {routes.map((route, index) => {
-                        <Route
+            <Navbar />
+            <Widget>
+                {/* {routes.map((route, index) => {
+                    console.log(route); */}
+                    <Routes>
+                        {/* <Route exact path="/panel/dashboard" element={<Dashboard />}/> */}
+                        <Route exact path="/panel/users" element={<Users />}/>
+                        <Route exact path="/panel/dashboard" element={<Dashboard />}/>
+                        {/* <Route
                             path={route.path}
-                            component={route.element}
-                        />
-                    })}
-                </Widget>
+                            render={route.element}
+                        /> */}
+                    </Routes>
+                {/* })} */}
+            </Widget>
             <Footer />
         </div>
     )
