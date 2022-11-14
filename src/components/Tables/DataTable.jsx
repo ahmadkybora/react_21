@@ -20,6 +20,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { visuallyHidden } from '@mui/utils';
 
 function descendingComparator(a, b, orderBy) {
@@ -113,7 +114,8 @@ DataTableHead.propTypes = {
 };
 
 const DataTableToolbar = (props) => {
-  const { numSelected, title } = props;
+  const { numSelected, title, setDisplayForm } = props;
+  const [display, setDisplay] = useState();
 
   return (
     <Toolbar
@@ -149,13 +151,17 @@ const DataTableToolbar = (props) => {
       {numSelected > 0 ? (
         <Tooltip title="Delete">
           <IconButton>
-            <DeleteIcon />
+            <DeleteIcon 
+              onClick={(event) => alert("ok")}
+              />
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
+        <Tooltip title="Add">
           <IconButton>
-            <FilterListIcon />
+            <AddCircleIcon 
+              onClick={() => setDisplay(setDisplayForm(current => !current))}
+              />
           </IconButton>
         </Tooltip>
       )}
@@ -168,7 +174,7 @@ DataTableToolbar.propTypes = {
 };
 
 const DataTable = (props, ...otherProps) => {
-  const { rows, headCells, title } = props;
+  const { rows, headCells, title, setDisplayForm } = props;
 
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('calories');
@@ -237,6 +243,7 @@ const DataTable = (props, ...otherProps) => {
         <DataTableToolbar 
           numSelected={selected.length} 
           title={title} 
+          setDisplayForm={setDisplayForm}
           />
         <TableContainer>
           <Table

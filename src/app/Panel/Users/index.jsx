@@ -1,5 +1,5 @@
-import React from "react";
-import { DataTable, Widget } from "../../../components";
+import React, { useState } from "react";
+import { ConfirmForm, DataTable, Widget } from "../../../components";
 
 function createData(name, calories, fat, carbs, protein) {
     return {
@@ -61,9 +61,27 @@ const headCells = [
 ];
 
 const Users = () => {
+    const [display, setDisplay] = useState(false);
+    const setDisplayForm = (val) => {
+      setDisplay(val);
+    };
     return(
         <Widget>
+            {display &&
+              <ConfirmForm 
+                labelTitle="title"
+                placeholderTitle="r"
+                minRowsTitle="1"
+                maxRowsTitle="1"
+                labelDescription="Description"
+                placeholderDescription="r"
+                minRowsDescription="8"
+                maxRowsDescription="8"
+                submitTitle="Confirm"
+                />
+            }
             <DataTable 
+                setDisplayForm={setDisplayForm}
                 rows={rows}
                 headCells={headCells}
                 title="Users"

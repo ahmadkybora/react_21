@@ -14,6 +14,8 @@ export { default as Footer } from "./Footer";
 export { default as Widget } from "./Widget";
 export { default as Form } from "./Form";
 export { default as InputForm } from "./Inputs/InputForm";
+export { default as TextareaInput } from "./Inputs/TextareaInput";
+export { default as ConfirmForm } from "./CustomForm/ConfirmForm";
 
 // export { default as ActionSlider } from "./Slider";
 
