@@ -1,26 +1,13 @@
-import {
-    APPLICATION_JSON,
-    BASE_URL,
-    BEARER,
-    CONTENT_TYPE,
-    MULTIPART_FORMDATA,
-    REFERER,
-    REFERER_POLICY,
-    SOWCO,
-    TOKEN,
-} from "./constants";
+import axios from "axios";
 
-const axios = require("axios").default;
-
+const BASE_URL = `${process.env.REACT_APP_URL}api/`;
+const TOKEN = localStorage.getItem("token");
 axios.defaults.baseURL = BASE_URL;
 
 if (TOKEN) {
     axios.defaults.headers.lang = localStorage.getItem("lang") || "en";
-    axios.defaults.headers.common.Authorization = BEARER + TOKEN;
-    axios.defaults.headers.common.Accept = APPLICATION_JSON;
-    axios.defaults.headers.common[CONTENT_TYPE] = MULTIPART_FORMDATA;
-    axios.defaults.headers.common.Referer = REFERER;
-    axios.defaults.headers.common[REFERER_POLICY] = SOWCO;
+    axios.defaults.headers.common.Authorization = `Bearer ${TOKEN}`;
+    axios.defaults.headers.common.Accept = "application/json";
 }
 
 export default {
