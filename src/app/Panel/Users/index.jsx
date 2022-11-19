@@ -58,8 +58,7 @@ const headCells = [
 
 const Users = () => {
   const dispatch = useDispatch();
-  const users = useSelector(state => state.userReducer);
-  console.log(users.users);
+  const users = useSelector(state => state.userReducer.users.data);
   useEffect(() => {
     dispatch(getUsers());
   }, [])
@@ -84,7 +83,7 @@ const Users = () => {
           }
           <DataTable 
             setDisplayForm={setDisplayForm}
-            rows={users.users}
+            rows={users && users}
             headCells={headCells}
             title="Users"
             />

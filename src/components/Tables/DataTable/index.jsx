@@ -10,8 +10,8 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import DataTableHead from "./DataTableHead1";
-import DataTableToolbar from "./DataTableToolbar1";
+import DataTableHead from "./DataTableHead";
+import DataTableToolbar from "./DataTableToolbar";
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -43,7 +43,7 @@ function stableSort(array, comparator) {
 
 const DataTable = (props, ...otherProps) => {
     const { rows, headCells, title, setDisplayForm } = props;
-  
+
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('calories');
     const [selected, setSelected] = useState([]);
@@ -59,7 +59,7 @@ const DataTable = (props, ...otherProps) => {
   
     const handleSelectAllClick = (event) => {
       if (event.target.checked) {
-        const newSelected = rows.map((n) => n.name);
+        const newSelected = rows.map((n) => n.id);
         setSelected(newSelected);
         return;
       }
@@ -99,7 +99,7 @@ const DataTable = (props, ...otherProps) => {
       setDense(event.target.checked);
     };
   
-    const isSelected = (name) => selected.indexOf(name) !== -1;
+    const isSelected = (id) => selected.indexOf(id) !== -1;
   
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows =
@@ -134,17 +134,17 @@ const DataTable = (props, ...otherProps) => {
                 {stableSort(rows, getComparator(order, orderBy))
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row, index) => {
-                    const isItemSelected = isSelected(row.username);
+                    const isItemSelected = isSelected(row.id);
                     const labelId = `enhanced-table-checkbox-${index}`;
   
                     return (
                       <TableRow
                         hover
-                        onClick={(event) => handleClick(event, row.username)}
+                        onClick={(event) => handleClick(event, row.id)}
                         role="checkbox"
                         aria-checked={isItemSelected}
                         tabIndex={-1}
-                        key={row.username}
+                        key={row.id}
                         selected={isItemSelected}
                       >
                         <TableCell padding="checkbox">

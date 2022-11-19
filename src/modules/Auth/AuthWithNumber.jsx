@@ -5,20 +5,36 @@ import {
     InputForm,
     SubmitButton
 } from "../../components";
+import Grid from '@mui/material/Grid';
 
 const AuthWithNumber = ({ ...otherProps }) => {
     return(
-        <Widget label="LoginWithNumber">
-            <Form>
-                <InputForm 
-                    label="Phone Number"
-                    name="Phone_number"
-                    />
-                <SubmitButton 
-                    title="Confirm"
-                    variant="contained"
-                    />
-            </Form>
+        <Widget>
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                style={{ minHeight: '100vh' }}
+                >
+
+                <Grid item xs={3}>
+
+                    <Form>
+                        <InputForm 
+                            label="Phone Number"
+                            name="Phone_number"
+                            />
+                        <SubmitButton 
+                            title="Confirm"
+                            variant="contained"
+                            />
+                    </Form>
+
+                </Grid>   
+            
+            </Grid> 
         </Widget>
     )
 }

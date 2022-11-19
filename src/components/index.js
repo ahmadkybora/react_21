@@ -8,7 +8,7 @@ export { default as SubmitButton } from "./Buttons/SubmitButton";
 export { default as UploadButton } from "./Buttons/UploadButton";
 export { default as Playground } from "./Autocomplete/Playground";
 export { default as SelectOption } from "./SelectOption";
-export { default as DataTable } from "./Tables/DataTable1/index1";
+export { default as DataTable } from "./Tables/DataTable";
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
 export { default as Widget } from "./Widget";

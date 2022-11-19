@@ -2,6 +2,9 @@ import Dashboard from "../app/Panel/Dashboard";
 import Users from "../app/Panel/Users";
 
 import Home from "../app/Site/Home";
+// import Login from "../app/Auth/Login";
+// import Register from "../app/Auth/Register";
+
 // import App from "../App";
 
 // import { lazy } from "react";
@@ -31,6 +34,8 @@ import Home from "../app/Site/Home";
 // const Article = () => import("../app/Article");
 
 const routes = [
+    // { path: "/login", exact: true, element: <Login /> },
+
     // { path: "/", exact: true, element: <App /> },
     { path: "/", exact: true, element: <Home /> },
     { path: "/panel/dashboard", exact: true, element: <Dashboard /> },

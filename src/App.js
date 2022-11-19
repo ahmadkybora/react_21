@@ -1,7 +1,8 @@
 // import './App.scss';
 import React, { Component } from 'react';
 import { useRoutes, useHistory, useNavigate, useLocation } from "react-router-dom";
-import MainPanel from './layouts/Panel/MainPanel';
+import AdminPanel from './layouts/Panel/AdminPanel';
+import Auth from './layouts/Auth';
 
 // import { routes } from "../src/routes";
 
@@ -43,10 +44,11 @@ const App = () => {
   // const routing = useRoutes(routes);
   return (
     <React.Fragment>
-      {/* {console.log()} */}
+      {/* {console.log(location.pathname)} */}
       {/* <ProtectedRouteAdmin /> */}
       {/* {(location.pathname === "/panel") && <MainPanel />} */}
-      <MainPanel />
+      {/* {location.pathname === "/login" && <Auth />} */}
+      {location.pathname === "/register" && <Auth />}
       {/* <div>{routing}</div> */}
     </React.Fragment>
   );
