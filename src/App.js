@@ -1,8 +1,9 @@
 // import './App.scss';
 import React, { Component } from 'react';
-import { useRoutes, useHistory, useNavigate, useLocation } from "react-router-dom";
+import { useRoutes, useHistory, useNavigate, useLocation, Outlet, Routes ,Route } from "react-router-dom";
 import AdminPanel from './layouts/Panel/AdminPanel';
 import Auth from './layouts/Auth';
+import Register from "./app/Auth/Register";
 
 // import { routes } from "../src/routes";
 
@@ -48,7 +49,13 @@ const App = () => {
       {/* <ProtectedRouteAdmin /> */}
       {/* {(location.pathname === "/panel") && <MainPanel />} */}
       {/* {location.pathname === "/login" && <Auth />} */}
-      {location.pathname === "/register" && <Auth />}
+      {/* {location.pathname === "/register" && <Auth />} */}
+      <Routes>
+        {routes.map((route, index) => {
+          console.log(route);
+          <Route exact={route.exact} path={route.path} element={<Register />}/>
+        })}
+      </Routes>
       {/* <div>{routing}</div> */}
     </React.Fragment>
   );

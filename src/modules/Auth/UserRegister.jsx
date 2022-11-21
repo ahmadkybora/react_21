@@ -7,7 +7,7 @@ import {
 } from "../../components";
 import Grid from '@mui/material/Grid';
 
-const Register = () => {
+const UserRegister = () => {
     return (
         <Widget>
             <Grid
@@ -48,4 +48,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default UserRegister;

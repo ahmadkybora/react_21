@@ -1,5 +1,5 @@
 import React from "react";
-import { Register as UserRegister } from "../../modules/Auth/Register"
+import UserRegister from "../../modules/Auth/UserRegister"
 
 const Register = () => {
     return(
