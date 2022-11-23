@@ -5,25 +5,44 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
-const settings = [
-  { name: 'Dashboard', path: 'dashboard', icon: <DashboardIcon /> },
-  { name: 'Setting', path: 'setting', icon: <SettingsIcon /> },
-  { name: 'Land Page', path: '/', icon: <HomeIcon /> },
-  { name: 'Logout', path: '/logout', icon: <LogoutIcon /> },
+const credits = [
+  { 
+    id: 1,
+    name: 'Profile',
+    path: 'profile',
+    icon: <AccountCircleIcon color='success' />,
+  },
+  { 
+    id: 2,
+    name: 'Setting',
+    path: 'setting',
+    icon: <SettingsIcon color='secondary' />,
+  }, 
+  { 
+    id: 3,
+    name: 'Logout',
+    path: 'logout',
+    icon: <LogoutIcon color='primary' />,
+  },
+  { 
+    id: 4,
+    name: 'Admin Panel',
+    path: 'panel/dashboard',
+    icon: <AdminPanelSettingsIcon color='dark' />,
+  },
 ];
 
-const Header = ({ handleDrawerOpen }) => {
+const Header = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -38,16 +57,6 @@ const Header = ({ handleDrawerOpen }) => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            onClick={handleDrawerOpen}
-          >
-            <MenuIcon />
-          </IconButton>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
 
           <Box sx={{ flexGrow: 0 }}>
@@ -72,11 +81,11 @@ const Header = ({ handleDrawerOpen }) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+              {credits.map((credit) => (
+                <MenuItem key={credit} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">
-                    {setting.icon}
-                    <NavLink style={{textDecoration: 'none'}} to={setting.path}>{setting.name}</NavLink>
+                    {credit.icon}
+                    <NavLink style={{ textDecoration: 'none', color: 'black', padding: "2px" }} to={credit.path}>{credit.name}</NavLink>
                   </Typography>
                 </MenuItem>
               ))}

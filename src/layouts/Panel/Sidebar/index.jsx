@@ -14,40 +14,40 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Header from "../Header";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const drawerWidth = 250;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginRight: -drawerWidth,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginRight: 0,
-    }),
-  }),
-);
+// const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
+//   ({ theme, open }) => ({
+//     flexGrow: 1,
+//     padding: theme.spacing(3),
+//     transition: theme.transitions.create('margin', {
+//       easing: theme.transitions.easing.sharp,
+//       duration: theme.transitions.duration.leavingScreen,
+//     }),
+//     marginRight: -drawerWidth,
+//     ...(open && {
+//       transition: theme.transitions.create('margin', {
+//         easing: theme.transitions.easing.easeOut,
+//         duration: theme.transitions.duration.enteringScreen,
+//       }),
+//       marginRight: 0,
+//     }),
+//   }),
+// );
 
 const data = [
-  { name: 'Dashboard', path: 'panel/dashboard', icon: <InboxIcon /> }, 
-  { name: 'Users', path: 'panel/users', icon: <MailIcon /> }, 
-  { name: 'Brands', path: 'panel/brands', icon: <MailIcon /> }, 
-  { name: 'Categories', path: 'panel/categories', icon: <MailIcon /> }, 
-  { name: 'Products', path: 'panel/products', icon: <MailIcon /> }, 
-  { name: 'Articles', path: 'panel/articles', icon: <MailIcon /> }, 
-  { name: 'Orders', path: 'panel/orders', icon: <MailIcon /> }, 
-  { name: 'Transactions', path: 'panel/transactions', icon: <MailIcon /> }, 
-  { name: 'Settings', path: 'panel/settings', icon: <MailIcon /> }, 
-  { name: 'Logout', path: 'panel/logout', icon: <MailIcon /> }, 
+  { name: 'Dashboard', path: 'dashboard', icon: <InboxIcon /> }, 
+  { name: 'Users', path: 'users', icon: <MailIcon /> }, 
+  { name: 'Brands', path: 'brands', icon: <MailIcon /> }, 
+  { name: 'Categories', path: 'categories', icon: <MailIcon /> }, 
+  { name: 'Products', path: 'products', icon: <MailIcon /> }, 
+  { name: 'Articles', path: 'articles', icon: <MailIcon /> }, 
+  { name: 'Orders', path: 'orders', icon: <MailIcon /> }, 
+  { name: 'Transactions', path: 'transactions', icon: <MailIcon /> }, 
+  { name: 'Settings', path: 'settings', icon: <MailIcon /> }, 
+  { name: 'Logout', path: 'logout', icon: <MailIcon /> }, 
 ];
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -75,10 +75,10 @@ const Sidebar = () => {
       <Header handleDrawerOpen={handleDrawerOpen} />
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <Main open={open}>
+        {/* <Main open={open}>
           <DrawerHeader />
 
-        </Main>
+        </Main> */}
         <Drawer
           sx={{
             width: drawerWidth,
@@ -104,7 +104,7 @@ const Sidebar = () => {
                 <ListItem key={index} disablePadding>
                   <ListItemButton>
                     <ListItemIcon>{text.icon}</ListItemIcon>
-                    <Link to={text.path}>{text.name}</Link>
+                    <NavLink style={{textDecoration: 'none'}} to={text.path}>{text.name}</NavLink>
                   </ListItemButton>
                 </ListItem>
               ))}

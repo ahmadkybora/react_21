@@ -11,9 +11,7 @@ import {
 const Home = () => {
     return(
         <div>
-            <Header />
-
-            <Footer />
+            <p>salam</p>
         </div>
     )
 }

@@ -5,14 +5,14 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Widget } from '../../../components';
 
-const Navbar = () => {
+const Footer = () => {
     return(
         <Widget>
-            <Card sx={{ display: 'flex', backgroundColor: "red" }}>
+            <Card sx={{ display: 'flex' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography component="div" variant="h5">
-                            Navbar
+                            Footer
                         </Typography>
                     </CardContent>
                 </Box>
@@ -21,4 +21,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default Footer;

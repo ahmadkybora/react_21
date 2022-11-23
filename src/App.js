@@ -2,8 +2,15 @@
 import React, { Component } from 'react';
 import { useRoutes, useHistory, useNavigate, useLocation, Outlet, Routes ,Route } from "react-router-dom";
 import AdminPanel from './layouts/Panel/AdminPanel';
+import Users from "./app/Panel/Users";
+import Dashboard from "./app/Panel/Dashboard";
+
 import Auth from './layouts/Auth';
 import Register from "./app/Auth/Register";
+import Login from "./app/Auth/Login";
+
+import LandPage from "./layouts/Site/LandPage";
+import Home from "./app/Site/Home";
 
 // import { routes } from "../src/routes";
 
@@ -30,7 +37,7 @@ import Register from "./app/Auth/Register";
 // import { BtnCircleBlue, BtnCircleRed, AlertDanger } from "./components/Styles";
 // import { BTN_PRIMARY, BTN_SECONDARY } from './components/Button/Style';
 // import Login from './modules/auth/Login';
-import routes from './routes';
+// import routes from './routes';
 // import { Route } from 'react-router-dom';
 // import Article from './app/Article';
 // import { gray, yellow } from "./plugins/colors/vars";
@@ -38,28 +45,59 @@ import routes from './routes';
 // import { F_GRAY_50 } from './plugins/colors';
 
 const App = () => {
+
+  return (
+    <React.Fragment>
+      <Routes>
+
+        <Route path="/register" exact element={<Register /> } />
+        <Route path="/login" exact element={<Login /> } />
+
+
+        <Route path="/" exact element={<LandPage /> }>
+          <Route path="/" exact element={<Home /> } />
+        </Route>
+
+        <Route path="/panel" exact element={<AdminPanel /> }>
+          <Route path="dashboard" exact element={<Dashboard /> } />
+          <Route path="users" exact element={<Users /> } />
+        </Route>
+
+      </Routes>
+    </React.Fragment>
+  )
+}
+
+
+    // const routing = useRoutes(routes);
+    // return <div className="dark">{routing}</div>;
   // const location = useLocation();
   // console.log(location.pathname);
   // const navigate = useNavigate();
   // console.log(navigate("http://localhost:3000/"));
   // const routing = useRoutes(routes);
-  return (
-    <React.Fragment>
+
+      {/* <Routes>
+        {routes.map(route => {
+          <Route path={route.path} exact element={route.component} />
+          console.log(route);
+        })}
+      </Routes> */}
       {/* {console.log(location.pathname)} */}
       {/* <ProtectedRouteAdmin /> */}
       {/* {(location.pathname === "/panel") && <MainPanel />} */}
       {/* {location.pathname === "/login" && <Auth />} */}
       {/* {location.pathname === "/register" && <Auth />} */}
-      <Routes>
-        {routes.map((route, index) => {
-          console.log(route);
-          <Route exact={route.exact} path={route.path} element={<Register />}/>
-        })}
-      </Routes>
+      {/* <Switch>
+        {routes.map(route =>
+          <Route key={route.id} path={route.pathname} exact component={route.component} />
+        )}
+        <Redirect to='/not-found' />
+      </Switch> */}
       {/* <div>{routing}</div> */}
-    </React.Fragment>
-  );
-}
+  //   </React.Fragment>
+  // );
+// }
 
 // class App1 extends Component {
 //   // https://flowbite.com/docs/components
