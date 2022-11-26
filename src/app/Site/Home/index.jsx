@@ -1,8 +1,8 @@
 import React from "react";
-import { 
-  Header,
-  Footer,
-} from "../../../components";
+// import { 
+//   Header,
+//   Footer,
+// } from "../../../components";
 
 // import AuthWithNumber from "../../../modules/Auth/AuthWithNumber";
 // import Login from "../../../modules/Auth/Login";
@@ -10,9 +10,7 @@ import {
 
 const Home = () => {
     return(
-        <div>
-            <p>salam</p>
-        </div>
+        <div />
     )
 }
 

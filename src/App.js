@@ -37,7 +37,7 @@ import Home from "./app/Site/Home";
 // import { BtnCircleBlue, BtnCircleRed, AlertDanger } from "./components/Styles";
 // import { BTN_PRIMARY, BTN_SECONDARY } from './components/Button/Style';
 // import Login from './modules/auth/Login';
-// import routes from './routes';
+import routes from './routes';
 // import { Route } from 'react-router-dom';
 // import Article from './app/Article';
 // import { gray, yellow } from "./plugins/colors/vars";
@@ -45,27 +45,29 @@ import Home from "./app/Site/Home";
 // import { F_GRAY_50 } from './plugins/colors';
 
 const App = () => {
+    const routing = useRoutes(routes);
+    return <div className="dark">{routing}</div>;
 
-  return (
-    <React.Fragment>
-      <Routes>
+  // return (
+  //   <React.Fragment>
+  //     <Routes>
 
-        <Route path="/register" exact element={<Register /> } />
-        <Route path="/login" exact element={<Login /> } />
+  //       <Route path="/register" exact element={<Register /> } />
+  //       <Route path="/login" exact element={<Login /> } />
 
 
-        <Route path="/" exact element={<LandPage /> }>
-          <Route path="/" exact element={<Home /> } />
-        </Route>
+  //       <Route path="/" exact element={<LandPage /> }>
+  //         <Route path="/" exact element={<Home /> } />
+  //       </Route>
 
-        <Route path="/panel" exact element={<AdminPanel /> }>
-          <Route path="dashboard" exact element={<Dashboard /> } />
-          <Route path="users" exact element={<Users /> } />
-        </Route>
+  //       <Route path="/panel" exact element={<AdminPanel /> }>
+  //         <Route path="dashboard" exact element={<Dashboard /> } />
+  //         <Route path="users" exact element={<Users /> } />
+  //       </Route>
 
-      </Routes>
-    </React.Fragment>
-  )
+  //     </Routes>
+  //   </React.Fragment>
+  // )
 }
 
 

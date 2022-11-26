@@ -12,18 +12,35 @@ const Dashboard = lazy(() => import("../app/Panel/Dashboard"));
 const Users = lazy(() => import("../app/Panel/Users"));
 
 const Home = lazy(() => import("../app/Site/Home"));
+const LandPage = lazy(() => import("../layouts/Site/LandPage"));
 
-const Login = lazy(() => import("../app/Panel/Dashboard"));
-const Register = lazy(() => import("../app/Panel/Dashboard"));
+const Login = lazy(() => import("../app/Auth/Login"));
+const Register = lazy(() => import("../app/Auth/Register"));
 /*****Routes******/
 
+console.log(Navigate.path);
 const routes = [
+  {
+    path: "/auth",
+    element: <Auth />,
+    children: [
+      { path: "login", exact: true, element: <Login /> },
+      { path: "register", exact: true, element: <Register /> },
+    ],
+  },
+  {
+    path: "/",
+    element: <LandPage />,
+    children: [
+      { path: "/", exact: true, element: <Home /> },
+    ],
+  },
   {
     path: "/panel",
     element: <AdminPanel />,
     children: [
-      { path: "/dashboard", exact: true, element: <Dashboard /> },
-      { path: "/users", exact: true, element: <Users /> },
+      { path: "dashboard", exact: true, element: <Dashboard /> },
+      { path: "users", exact: true, element: <Users /> },
     ],
   },
 ];
