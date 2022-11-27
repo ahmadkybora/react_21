@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { styled } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -18,9 +18,53 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import Tooltip from '@mui/material/Tooltip';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
 import { 
-  Widget,
+    SubmitButton,
+    Widget,
 } from "../../../components";
+import { NavLink } from "react-router-dom";
+
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+}));
+  
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+}));
+  
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('md')]: {
+        width: '90ch',
+      },
+    },
+}));
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -42,6 +86,7 @@ let credits = [
         border: '1px dashed grey',
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "1",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -49,6 +94,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "1",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -56,6 +102,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "1",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -63,6 +110,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "1",
     },
 ];
 
@@ -111,6 +159,21 @@ const Product = () => {
 
     return(
         <Widget>
+            <Widget>
+                <Search>
+                    <SearchIconWrapper>
+                        <SearchIcon />
+                    </SearchIconWrapper>
+                    <StyledInputBase
+                        placeholder="Search prodcut…"
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                    <SubmitButton 
+                        title="Search"
+                        variant="contained"
+                        />
+                </Search>
+            </Widget>
             <Card sx={{ display: 'flex' }}>
                 {credits.map((credit, index) => (
                     <Card key={index} sx={{ maxWidth: 245, m: 2 }}>
@@ -135,11 +198,13 @@ const Product = () => {
                             alt="Paella dish"
                             />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
-                            This impressive paella is a perfect party dish and a fun meal to cook
-                            together with your guests. Add 1 cup of frozen peas along with the mussels,
-                            if you like.
-                            </Typography>
+                            <NavLink to={credit.path} style={{ textDecoration: "none"}}>
+                                <Typography variant="body2" color="text.secondary">
+                                This impressive paella is a perfect party dish and a fun meal to cook
+                                together with your guests. Add 1 cup of frozen peas along with the mussels,
+                                if you like.
+                                </Typography>
+                            </NavLink>
                         </CardContent>
                         <CardActions disableSpacing>
                             {/* {toolTips.map((t, index => (
