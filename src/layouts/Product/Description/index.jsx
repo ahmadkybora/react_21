@@ -6,7 +6,7 @@ import {
 const Description = () => {
     return(
         <Widget>
-
+            Description
         </Widget>
     );
 }

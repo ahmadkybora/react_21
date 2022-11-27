@@ -1,10 +1,11 @@
-import Auth from '../layouts/Auth';
-
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 
 /****Layouts*****/
-const AdminPanel = lazy(() => import("../layouts/Panel/AdminPanel"));
+const AdminPanelLayout = lazy(() => import("../layouts/Panel/AdminPanel"));
+const AuthLayout = lazy(() => import('../layouts/Auth'));
+const ProductLayout = lazy(() => import('../layouts/Product/Content'));
+const LandPageLayout = lazy(() => import("../layouts/Site/LandPage"));
 
 /***** Pages ****/
 
@@ -12,17 +13,17 @@ const Dashboard = lazy(() => import("../app/Panel/Dashboard"));
 const Users = lazy(() => import("../app/Panel/Users"));
 
 const Home = lazy(() => import("../app/Site/Home"));
-const LandPage = lazy(() => import("../layouts/Site/LandPage"));
+const Product = lazy(() => import("../app/Site/Product"));
 
 const Login = lazy(() => import("../app/Auth/Login"));
 const Register = lazy(() => import("../app/Auth/Register"));
 /*****Routes******/
 
-console.log(Navigate.path);
+// console.log(Navigate.path);
 const routes = [
   {
     path: "/auth",
-    element: <Auth />,
+    element: <AuthLayout />,
     children: [
       { path: "login", exact: true, element: <Login /> },
       { path: "register", exact: true, element: <Register /> },
@@ -30,14 +31,21 @@ const routes = [
   },
   {
     path: "/",
-    element: <LandPage />,
+    element: <LandPageLayout />,
     children: [
       { path: "/", exact: true, element: <Home /> },
     ],
   },
   {
+    path: "/product",
+    element: <ProductLayout />,
+    children: [
+      { path: ":id", exact: true, element: <Product /> },
+    ],
+  },
+  {
     path: "/panel",
-    element: <AdminPanel />,
+    element: <AdminPanelLayout />,
     children: [
       { path: "dashboard", exact: true, element: <Dashboard /> },
       { path: "users", exact: true, element: <Users /> },

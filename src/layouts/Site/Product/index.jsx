@@ -86,7 +86,7 @@ let credits = [
         border: '1px dashed grey',
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
-        path: "1",
+        path: "product/1",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -94,7 +94,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
-        path: "1",
+        path: "product/2",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -102,7 +102,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
-        path: "1",
+        path: "product/3",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -110,7 +110,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
-        path: "1",
+        path: "product/4",
     },
 ];
 
