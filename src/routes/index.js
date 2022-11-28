@@ -4,6 +4,8 @@ import { Navigate } from "react-router-dom";
 /****Layouts*****/
 const AdminPanelLayout = lazy(() => import("../layouts/Panel/AdminPanel"));
 const AuthLayout = lazy(() => import('../layouts/Auth'));
+const ArticleLayout = lazy(() => import('../layouts/Article/Content'));
+const ArticlesLayout = lazy(() => import('../layouts/Articles/Content'));
 const ProductLayout = lazy(() => import('../layouts/Product/Content'));
 const LandPageLayout = lazy(() => import("../layouts/Site/LandPage"));
 
@@ -14,6 +16,8 @@ const Users = lazy(() => import("../app/Panel/Users"));
 
 const Home = lazy(() => import("../app/Site/Home"));
 const Product = lazy(() => import("../app/Site/Product"));
+const Article = lazy(() => import("../app/Site/Article"));
+const Articles = lazy(() => import("../app/Site/Articles"));
 
 const Login = lazy(() => import("../app/Auth/Login"));
 const Register = lazy(() => import("../app/Auth/Register"));
@@ -41,6 +45,20 @@ const routes = [
     element: <ProductLayout />,
     children: [
       { path: ":id", exact: true, element: <Product /> },
+    ],
+  },
+  {
+    path: "/article",
+    element: <ArticleLayout />,
+    children: [
+      { path: ":id", exact: true, element: <Article /> },
+    ],
+  },
+  {
+    path: "/articles",
+    element: <ArticlesLayout />,
+    children: [
+      { path: "articles", exact: true, element: <Articles /> },
     ],
   },
   {

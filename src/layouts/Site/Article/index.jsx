@@ -24,6 +24,7 @@ import {
     SubmitButton,
     Widget,
 } from "../../../components";
+import { NavLink } from "react-router-dom";
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -85,6 +86,7 @@ let credits = [
         border: '1px dashed grey',
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "article/1",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -92,6 +94,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "article/2",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -99,6 +102,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "article/3",
     },
     {
         title: "Shrimp and Chorizo Paella", 
@@ -106,6 +110,7 @@ let credits = [
         icon: "", 
         image: require("../../../assets/img/banner.jpeg"),
         description: "",
+        path: "article/4",
     },
 ];
 
@@ -193,11 +198,13 @@ const Article = () => {
                             alt="Paella dish"
                             />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
-                            This impressive paella is a perfect party dish and a fun meal to cook
-                            together with your guests. Add 1 cup of frozen peas along with the mussels,
-                            if you like.
-                            </Typography>
+                            <NavLink to={credit.path} style={{ textDecoration: "none"}}>
+                                <Typography variant="body2" color="text.secondary">
+                                This impressive paella is a perfect party dish and a fun meal to cook
+                                together with your guests. Add 1 cup of frozen peas along with the mussels,
+                                if you like.
+                                </Typography>
+                            </NavLink>
                         </CardContent>
                         <CardActions disableSpacing>
                             {/* {toolTips.map((t, index => (

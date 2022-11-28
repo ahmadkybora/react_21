@@ -3,15 +3,11 @@ import {
   Widget,
 } from "../../../components";
 import Navbar from "../Navbar";
-import ImageContent from "../ImageContent";
 import Description from "../Description";
-import AddToCart from "../AddToCart";
 import Header from "../../Site/Header";
 import Footer from "../../Site/Footer";
-import SimilarProducts from "../SimilarProducts";
-import Box from '@mui/material/Box';
 
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 let credit = 
     {
@@ -31,19 +27,13 @@ const Content = () => {
             <Navbar 
                 title={credit.title}
                 />
-            <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                <ImageContent 
-                    image={credit.image}
-                    />
-                <AddToCart />
-            </Box>
+            <Description 
+                image={credit.image}
+                description={credit.description}
+                />
             <Widget>
                 <Outlet />
             </Widget>
-            <Description 
-                description={credit.description}
-                />
-            <SimilarProducts />
             <Footer />
         </>
     )
