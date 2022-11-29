@@ -7,6 +7,7 @@ const AuthLayout = lazy(() => import('../layouts/Auth'));
 const ArticleLayout = lazy(() => import('../layouts/Article/Content'));
 const ArticlesLayout = lazy(() => import('../layouts/Articles/Content'));
 const ProductLayout = lazy(() => import('../layouts/Product/Content'));
+const ProductsLayout = lazy(() => import("../layouts/Products/Content"));
 const LandPageLayout = lazy(() => import("../layouts/Site/LandPage"));
 
 /***** Pages ****/
@@ -16,6 +17,7 @@ const Users = lazy(() => import("../app/Panel/Users"));
 
 const Home = lazy(() => import("../app/Site/Home"));
 const Product = lazy(() => import("../app/Site/Product"));
+const Products = lazy(() => import("../app/Site/Products"));
 const Article = lazy(() => import("../app/Site/Article"));
 const Articles = lazy(() => import("../app/Site/Articles"));
 
@@ -48,6 +50,13 @@ const routes = [
     ],
   },
   {
+    path: "/products",
+    element: <ProductsLayout />,
+    children: [
+      { path: "", exact: true, element: <Products /> },
+    ],
+  },
+  {
     path: "/article",
     element: <ArticleLayout />,
     children: [
@@ -58,7 +67,7 @@ const routes = [
     path: "/articles",
     element: <ArticlesLayout />,
     children: [
-      { path: "articles", exact: true, element: <Articles /> },
+      { path: "", exact: true, element: <Articles /> },
     ],
   },
   {

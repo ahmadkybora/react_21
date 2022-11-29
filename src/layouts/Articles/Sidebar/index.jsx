@@ -4,6 +4,8 @@ import {
   } from "../../../components";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
+import { CardContent, Typography } from "@mui/material";    
+import { red } from '@mui/material/colors';
 
 let credits = [
     {
@@ -42,18 +44,70 @@ let credits = [
     },
 ];
 
+let brands = [
+    {
+        title: "Shrimp and Chorizo", 
+    },
+    {
+        title: "Shrimp and Chorizo", 
+    },
+    {
+        title: "Shrimp and Chorizo", 
+    },
+    {
+        title: "Shrimp and Chorizo", 
+    },
+    {
+        title: "Shrimp and Chorizo", 
+    },
+];
+
+let categories = [
+    {
+        title: "Chorizo Paella", 
+    },
+    {
+        title: "Chorizo Paella", 
+    },
+    {
+        title: "Chorizo Paella", 
+    },
+    {
+        title: "Chorizo Paella", 
+    },
+    {
+        title: "Chorizo Paella", 
+    },
+];
+
 const Sidebar = () => {
     return(
         <Widget>
                 <Card sx={{ display: 'flex', flexDirection: 'column' }}>
-                    {credits.map((credit, index) => (
-                        <Card key={index} sx={{ maxWidth: 245, m: 2 }}>
-                            <CardHeader
-                                title={credit.title}
-                                subheader={credit.createdAt}
-                            />
-                        </Card>
-                    ))}
+                    <CardHeader
+                        sx={{ bgcolor: red[100] }}
+                        title="Latest posts"
+                        />
+                    <CardContent>
+                        {brands.map((brand, index) => (
+                            <Typography sx={{ maxWidth: 245, m: 2 }}>
+                                {brand.title}
+                            </Typography>
+                        ))}
+                    </CardContent>
+                </Card>
+                <Card sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardHeader
+                        sx={{ bgcolor: red[100] }}
+                        title="The most visited content"
+                        />
+                    <CardContent>
+                        {categories.map((category, index) => (
+                            <Typography sx={{ maxWidth: 245, m: 2 }}>
+                                {category.title}
+                            </Typography>
+                        ))}
+                    </CardContent>
                 </Card>
         </Widget>
     );

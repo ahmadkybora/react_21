@@ -17,25 +17,25 @@ let credits = [
         border: '1px dashed grey'
     },
     {
-        name: "ArticleCategory", 
+        name: "ArticleCategories", 
         icon: <GroupIcon color="secondary" />, 
         path: "/articles", 
         border: '1px dashed grey'
     },
     {
-        name: "Article", 
+        name: "Articles", 
         icon: <GroupIcon color="success" />, 
         path: "/articles", 
         border: '1px dashed grey'
     },
     {
-        name: "ProductCategory", 
+        name: "ProductCategories", 
         icon: <GroupIcon color="action" />, 
         path: "/product-categories", 
         border: '1px dashed grey'
     },
     {
-        name: "Product", 
+        name: "Products", 
         icon: <GroupIcon color="disabled" />, 
         path: "/products", 
         border: '1px dashed grey',

@@ -18,6 +18,9 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import HomeIcon from '@mui/icons-material/Home';
+import Grid from '@mui/material/Grid';
 
 const credits = [
   { 
@@ -41,61 +44,81 @@ const credits = [
   { 
     id: 4,
     name: 'Admin Panel',
+    path: '/panel/dashboard',
+    icon: <AdminPanelSettingsIcon color='dark' />,
+  },
+];
+
+const Products = [
+  { 
+    id: 1,
+    name: 'Products',
+    path: '/products',
+    icon: <AccountCircleIcon color='success' />,
+  },
+  { 
+    id: 2,
+    name: 'Setting',
+    path: 'setting',
+    icon: <SettingsIcon color='secondary' />,
+  }, 
+  { 
+    id: 3,
+    name: 'Logout',
+    path: 'logout',
+    icon: <LogoutIcon color='primary' />,
+  },
+  { 
+    id: 4,
+    name: 'Admin Panel',
     path: 'panel/dashboard',
     icon: <AdminPanelSettingsIcon color='dark' />,
   },
 ];
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+const Articles = [
+  { 
+    id: 1,
+    name: 'Artcicles',
+    path: '/articles',
+    icon: <AccountCircleIcon color='success' />,
   },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
+  { 
+    id: 2,
+    name: 'Setting',
+    path: 'setting',
+    icon: <SettingsIcon color='secondary' />,
+  }, 
+  { 
+    id: 3,
+    name: 'Logout',
+    path: 'logout',
+    icon: <LogoutIcon color='primary' />,
   },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '90ch',
-    },
+  { 
+    id: 4,
+    name: 'Admin Panel',
+    path: 'panel/dashboard',
+    icon: <AdminPanelSettingsIcon color='dark' />,
   },
-}));
+];
 
 const Header = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElProducts, setAnchorElProducts] = React.useState(null);
+  const [anchorElArticles, setAnchorElArticles] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleOpenUserMenu1 = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  const handleOpenProductsMenu = (event) => {
+    setAnchorElProducts(event.currentTarget);
+  }
+
+  const handleOpenArticlesMenu = (event) => {
+    setAnchorElArticles(event.currentTarget);
+  }
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -105,30 +128,66 @@ const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Typography variant="body2" color="text.secondary">more</Typography>
-              <ArrowDropDownIcon />
-            </IconButton>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} /> */}
+          <Box>
+            
+            {/* <Box> */}
+              <Grid 
+                container 
+                spacing={3}
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                >
+
+                <Grid item md={3}>
+                  <IconButton onClick={handleOpenProductsMenu} sx={{ p: 0 }}>
+                    <Typography variant="body2" color="text.secondary">Products</Typography>
+                      <InventoryIcon />
+                  </IconButton>
+                </Grid>
+
+                <Grid item md={3}>
+                  <IconButton onClick={handleOpenArticlesMenu} sx={{ p: 0 }}>
+                    <Typography variant="body2" color="text.secondary">Articles</Typography>
+                      <InventoryIcon />
+                  </IconButton>
+                </Grid>
+
+                <Grid item md={3}>
+                  <IconButton sx={{ p: 0 }}>
+                    <Typography variant="body2" color="text.secondary">
+                      <InventoryIcon />
+                      <NavLink to="about">About</NavLink>
+                    </Typography>
+                  </IconButton>
+                </Grid>
+
+                <Grid item md={3}>
+                  <IconButton sx={{ p: 0 }}>
+                    <Typography variant="body2" color="text.secondary">
+                      <HomeIcon />
+                      <NavLink to="/">Home</NavLink>
+                    </Typography>
+                  </IconButton>
+                </Grid>
+
+            {/* </Box> */}
+                <Grid item md={3}>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+
+              </Grid>
+
             <Menu
-              sx={{ mt: '45px' }}
+              // PaperProps={{sx: {width: '800px'}}}
+              sx={{ mt: '45px'}}
               id="menu-appbar"
-              anchorEl={anchorElUser}
+              anchorEl={anchorElProducts}
               anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'right',
@@ -138,18 +197,46 @@ const Header = () => {
                 vertical: 'top',
                 horizontal: 'right',
               }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              open={Boolean(anchorElProducts)}
+              onClose={handleOpenProductsMenu}
             >
-              {credits.map((credit) => (
-                <MenuItem key={credit} onClick={handleOpenUserMenu1}>
+              {Products.map((Product) => (
+                <MenuItem key={Product} onClick={handleOpenProductsMenu}>
                   <Typography textAlign="center">
-                    {credit.icon}
-                    <NavLink style={{ textDecoration: 'none', color: 'black', padding: "2px" }} to={credit.path}>{credit.name}</NavLink>
+                    {Product.icon}
+                    <NavLink style={{ textDecoration: 'none', color: 'black', padding: "2px" }} to={Product.path}>{Product.name}</NavLink>
                   </Typography>
                 </MenuItem>
               ))}
             </Menu>
+
+            <Menu
+              // PaperProps={{sx: {width: '800px'}}}
+              sx={{ mt: '45px'}}
+              id="menu-appbar"
+              anchorEl={anchorElArticles}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElArticles)}
+              onClose={handleOpenArticlesMenu}
+            >
+              {Articles.map((Article) => (
+                <MenuItem key={Article} onClick={handleOpenProductsMenu}>
+                  <Typography textAlign="center">
+                    {Article.icon}
+                    <NavLink style={{ textDecoration: 'none', color: 'black', padding: "2px" }} to={Article.path}>{Article.name}</NavLink>
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+
             <Menu
               style={{ width: "1000px" }}
               sx={{ mt: '45px' }}
@@ -176,6 +263,7 @@ const Header = () => {
                 </MenuItem>
               ))}
             </Menu>
+
           </Box>
         </Toolbar>
       </Container>
