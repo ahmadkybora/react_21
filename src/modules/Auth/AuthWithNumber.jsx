@@ -6,6 +6,7 @@ import {
     SubmitButton
 } from "../../components";
 import Grid from '@mui/material/Grid';
+import translate from "../../i18n/translate";
 
 const AuthWithNumber = ({ ...otherProps }) => {
     return(
@@ -27,7 +28,7 @@ const AuthWithNumber = ({ ...otherProps }) => {
                             name="Phone_number"
                             />
                         <SubmitButton 
-                            title="Confirm"
+                            title={translate("confirm")}
                             variant="contained"
                             />
                     </Form>

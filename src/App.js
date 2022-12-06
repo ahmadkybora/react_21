@@ -1,5 +1,5 @@
 // import './App.scss';
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { useRoutes, useHistory, useNavigate, useLocation, Outlet, Routes ,Route } from "react-router-dom";
 import AdminPanel from './layouts/Panel/AdminPanel';
 import Users from "./app/Panel/Users";
@@ -44,9 +44,21 @@ import routes from './routes';
 // import { F_GRAY_800 } from './plugins/colors';
 // import { F_GRAY_50 } from './plugins/colors';
 
+import { I18nProvider, LOCALES } from "../src/i18n";
+import translate from "../src/i18n/translate"
+import { FormattedMessage } from "react-intl";
+
 const App = () => {
+  const [locale, setLocale] = useState(localStorage.getItem('lang') || 'en');
     const routing = useRoutes(routes);
-    return <div className="dark">{routing}</div>;
+    return (
+      <I18nProvider locale={locale}>
+        {/* <FormattedMessage id="hello" /> */}
+        {/* {translate("hello")} */}
+        {translate("edit", {path: <>is no</>})}
+        <div className="dark">{routing}</div>
+      </I18nProvider>)
+      ;
 
   // return (
   //   <React.Fragment>

@@ -18,3 +18,5 @@ export const CREATE_BRANDS = "CREATE_BRANDS";
 export const STORE_BRANDS = "STORE_BRANDS";
 export const EDIT_BRNADS = "EDIT_BRNADS";
 export const UPDATE_BRNADS = "UPDATE_BRNADS";
+
+export const GET_LANG = "GET_LANG";

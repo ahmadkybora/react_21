@@ -4,7 +4,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import GroupIcon from '@mui/icons-material/Group';
-import { Widget } from '../../../components';
+import { MyTable, Widget } from '../../../components';
+
+import MaterialTable from "material-table";
 
 let credits = [
     {
@@ -45,9 +47,179 @@ let credits = [
     },
 ];
 
+// let columns = [
+//     {
+//         title: "First Name",
+//         field: "first_name",
+//         type: "string",
+//     },
+//     {
+//         title: "Last Name",
+//         field: "last_name",
+//         type: "string",
+//     },
+//     {
+//         title: "User Name",
+//         field: "username",
+//         type: "string",
+//     },
+//     {
+//         title: "Email",
+//         field: "email",
+//         type: "string",
+//     },
+// ];
+
+// let data = [
+//     {
+//         first_name: "1",
+//         last_name: "1",
+//         username: "1",
+//         email: "1",
+//     },
+//     {
+//         first_name: "2",
+//         last_name: "2",
+//         username: "2",
+//         email: "2",
+//     },
+//     {
+//         first_name: "3",
+//         last_name: "3",
+//         username: "3",
+//         email: "3",
+//     }
+// ];
+
 const Dashboard = () => {
+    const { useState } = React;
+
+    const [columns, setColumns] = useState([
+        { title: 'Name', field: 'name' },
+        { title: 'Surname', field: 'surname', initialEditValue: 'initial edit value' },
+        { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
+        {
+            title: 'Birth Place',
+            field: 'birthCity',
+            lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
+        },
+    ]);
+
+    const [data, setData] = useState([
+        { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+        { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
+    ]);
+
     return(
         <Widget>
+        {/* <MaterialTable
+            title="Multiple Actions Preview"
+            columns={[
+                { title: 'Name', field: 'name' },
+                { title: 'Surname', field: 'surname' },
+                { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
+                {
+                title: 'Birth Place',
+                field: 'birthCity',
+                lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
+                },
+            ]}
+            data={[
+                { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+                { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
+            ]}        
+            actions={[
+                {
+                icon: 'save',
+                tooltip: 'Save User',
+                onClick: (event, rowData) => alert("You saved " + rowData.name)
+                },
+                {
+                icon: 'delete',
+                tooltip: 'Delete User',
+                onClick: (event, rowData) => confirm("You want to delete " + rowData.name)
+                }
+            ]}
+            /> */}
+
+
+            {/* <MyTable /> */}
+
+            <MaterialTable
+                title="Editable Preview"
+                columns={columns}
+                data={data}
+                editable={{
+                    onRowAdd: newData =>
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        setData([...data, newData]);
+                        
+                        resolve();
+                        }, 1000)
+                    }),
+                    onRowUpdate: (newData, oldData) =>
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        const dataUpdate = [...data];
+                        const index = oldData.tableData.id;
+                        dataUpdate[index] = newData;
+                        setData([...dataUpdate]);
+
+                        resolve();
+                        }, 1000)
+                    }),
+                    onRowDelete: oldData =>
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        const dataDelete = [...data];
+                        const index = oldData.tableData.id;
+                        dataDelete.splice(index, 1);
+                        setData([...dataDelete]);
+                        
+                        resolve()
+                        }, 1000)
+                    }),
+                }}
+                />
+
+            <MyTable            
+                title="Editable Preview"
+                columns={columns}
+                data={data}
+                editable={{
+                    onRowAdd: newData =>
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        setData([...data, newData]);
+                        
+                        resolve();
+                        }, 1000)
+                    }),
+                    onRowUpdate: (newData, oldData) =>
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        const dataUpdate = [...data];
+                        const index = oldData.tableData.id;
+                        dataUpdate[index] = newData;
+                        setData([...dataUpdate]);
+
+                        resolve();
+                        }, 1000)
+                    }),
+                    onRowDelete: oldData =>
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                        const dataDelete = [...data];
+                        const index = oldData.tableData.id;
+                        dataDelete.splice(index, 1);
+                        setData([...dataDelete]);
+                        
+                        resolve()
+                        }, 1000)
+                    }),
+                }}
+                />
             <Card sx={{ display: 'flex' }}>
                 {credits.map((credit, index) => (
                     <Card sx={{ display: 'flex' }}>

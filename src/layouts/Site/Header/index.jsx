@@ -21,6 +21,9 @@ import InputBase from '@mui/material/InputBase';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import HomeIcon from '@mui/icons-material/Home';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Flags } from '../../../components';
 
 const credits = [
   { 
@@ -124,8 +127,47 @@ const Header = () => {
     setAnchorElUser(null);
   };
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <AppBar position="static">
+      <Flags />
+          {/* <IconButton aria-label="delete" size="small" onClick={handleClick}>
+            <DeleteIcon fontSize="inherit" />
+          </IconButton>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <MenuItem onClick={handleClose}>
+              <IconButton aria-label="delete" size="small" onClick={handleClick}>
+                <DeleteIcon fontSize="inherit" />
+              </IconButton>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <IconButton aria-label="delete" size="small" onClick={handleClick}>
+                <DeleteIcon fontSize="inherit" />
+              </IconButton>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <IconButton aria-label="delete" size="small" onClick={handleClick}>
+                <DeleteIcon fontSize="inherit" />
+              </IconButton>
+            </MenuItem>
+          </Menu> */}
+
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} /> */}
