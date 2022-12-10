@@ -20,3 +20,4 @@ export const EDIT_BRNADS = "EDIT_BRNADS";
 export const UPDATE_BRNADS = "UPDATE_BRNADS";
 
 export const GET_LANG = "GET_LANG";
+export const UPDATE_LANG = "UPDATE_LANG";

@@ -50,6 +50,7 @@ import { FormattedMessage } from "react-intl";
 
 const App = () => {
   const [locale, setLocale] = useState(localStorage.getItem('lang') || 'en');
+  console.log(locale);
     const routing = useRoutes(routes);
     return (
       <I18nProvider locale={locale}>
