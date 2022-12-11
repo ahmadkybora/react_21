@@ -47,17 +47,19 @@ import routes from './routes';
 import { I18nProvider, LOCALES } from "../src/i18n";
 import translate from "../src/i18n/translate"
 import { FormattedMessage } from "react-intl";
+import { useSelector } from 'react-redux';
 
 const App = () => {
   const routing = useRoutes(routes);
-  const [locale, setLocale] = useState(localStorage.getItem('lang') || 'en');
-  useEffect(() => {
-    setLocale(localStorage.getItem('lang'));
-    console.log(localStorage.getItem('lang'));
-  }, []);
+  const lang = useSelector(state => state.settingReducer.lang);
+
+  // const [locale, setLocale] = useState(getLanguage);
+  // useEffect(() => {
+  //   setLocale(getLanguage);
+  // }, [locale]);
 
   return (
-    <I18nProvider locale={locale}>
+    <I18nProvider locale={lang ? lang : LOCALES.ENGLISH}>
       {/* <FormattedMessage id="hello" /> */}
       {/* {translate("hello")} */}
       {translate("edit", {path: <>is no</>})}
