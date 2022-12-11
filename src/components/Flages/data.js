@@ -2,8 +2,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const languageData = [
     {
-      value: "en",
-      name: "English",
+      value: 'en-us',
+      name: 'English',
       icon: <DeleteIcon />
     },
     {
@@ -12,9 +12,14 @@ const languageData = [
       icon: <DeleteIcon />
     },
     {
-        value: "fa",
-        name: "فارسی",
-        icon: <DeleteIcon />
+      value: "de-de",
+      name: "GERMAN",
+      icon: <DeleteIcon />
+    },
+    {
+      value: "fr-ca",
+      name: "FRENCH",
+      icon: <DeleteIcon />
     }
   ];
 

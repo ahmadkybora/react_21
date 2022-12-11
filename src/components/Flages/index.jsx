@@ -1,7 +1,7 @@
 import { IconButton, Menu } from "@mui/material";
 import MenuItem from '@mui/material/MenuItem';
 import { updateLang } from "../../../src/store/actions/settingAction";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import languageData from "../../../src/components/Flages/data";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch } from "react-redux";
@@ -47,6 +47,7 @@ const Flags = ({
                     onClick={() => changeLanguage(lang.value)}>
                     {lang.icon}
                   </IconButton>
+                  {lang.value}
                 </MenuItem>
               ))}
           </Menu>

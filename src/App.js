@@ -49,17 +49,21 @@ import translate from "../src/i18n/translate"
 import { FormattedMessage } from "react-intl";
 
 const App = () => {
+  const routing = useRoutes(routes);
   const [locale, setLocale] = useState(localStorage.getItem('lang') || 'en');
-  console.log(locale);
-    const routing = useRoutes(routes);
-    return (
-      <I18nProvider locale={locale}>
-        {/* <FormattedMessage id="hello" /> */}
-        {/* {translate("hello")} */}
-        {translate("edit", {path: <>is no</>})}
-        <div className="dark">{routing}</div>
-      </I18nProvider>)
-      ;
+  useEffect(() => {
+    setLocale(localStorage.getItem('lang'));
+    console.log(localStorage.getItem('lang'));
+  }, []);
+
+  return (
+    <I18nProvider locale={locale}>
+      {/* <FormattedMessage id="hello" /> */}
+      {/* {translate("hello")} */}
+      {translate("edit", {path: <>is no</>})}
+      <div className="dark">{routing}</div>
+    </I18nProvider>
+  );
 
   // return (
   //   <React.Fragment>

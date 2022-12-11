@@ -19,6 +19,7 @@
     "bootstrap": "^5.2.2",
     "font-awesome": "^4.7.0",
     "formik": "^2.2.9",
+    "formik-file-and-image-input": "^0.0.6",
     "jquery": "^3.6.1",
     "material-table": "^1.69.3",
     "popper.js": "^1.16.1",
