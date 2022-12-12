@@ -51,15 +51,30 @@ import { useSelector } from 'react-redux';
 
 const App = () => {
   const routing = useRoutes(routes);
-  const lang = useSelector(state => state.settingReducer.lang);
+  // const lang = useSelector(state => state.settingReducer.lang);
+  const [lang, setLang] = useState(useSelector(state => state.settingReducer.lang));
 
   // const [locale, setLocale] = useState(getLanguage);
   // useEffect(() => {
   //   setLocale(getLanguage);
   // }, [locale]);
 
+  useEffect(() => {
+    getLang();
+  });
+  
+  const getLang = () => {
+    // console.log(localStorage.getItem('lang'));
+    const language = "en-us";
+    localStorage.getItem('lang') ? 
+    setLang(localStorage.getItem('lang')) : 
+    localStorage.setItem('lang', language);
+    setLang(localStorage.getItem('lang'))
+    // console.log(localStorage.getItem('lang'));
+  }
+
   return (
-    <I18nProvider locale={lang ? lang : LOCALES.ENGLISH}>
+    <I18nProvider locale={lang}>
       {/* <FormattedMessage id="hello" /> */}
       {/* {translate("hello")} */}
       {translate("edit", {path: <>is no</>})}

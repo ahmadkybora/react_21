@@ -40,14 +40,17 @@ const Flags = ({
             }}
             >
               {languageData.map((lang) => (
-                <MenuItem onClick={handleClose}>
+                <MenuItem 
+                  onClick={() => {
+                    handleClose;
+                    changeLanguage(lang.value)
+                  }}>
                   <IconButton 
                     aria-label="delete" 
                     size="small" 
-                    onClick={() => changeLanguage(lang.value)}>
+                    >
                     {lang.icon}
                   </IconButton>
-                  {lang.value}
                 </MenuItem>
               ))}
           </Menu>

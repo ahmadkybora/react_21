@@ -1,25 +1,23 @@
-import DeleteIcon from '@mui/icons-material/Delete';
-
 const languageData = [
     {
       value: 'en-us',
       name: 'English',
-      icon: <DeleteIcon />
+      icon: <span class="fi fi-us"></span>
     },
     {
-      value: "fa",
-      name: "فارسی",
-      icon: <DeleteIcon />
+      value: "fa-ir",
+      name: "PERSIAN",
+      icon: <span class="fi fi-ir"></span>
     },
     {
       value: "de-de",
       name: "GERMAN",
-      icon: <DeleteIcon />
+      icon: <span class="fi fi-de"></span>
     },
     {
       value: "fr-ca",
       name: "FRENCH",
-      icon: <DeleteIcon />
+      icon: <span class="fi fi-fr"></span>
     }
   ];
 
