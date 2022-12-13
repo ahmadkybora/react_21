@@ -65,11 +65,14 @@ const App = () => {
   
   const getLang = () => {
     // console.log(localStorage.getItem('lang'));
-    const language = "en-us";
-    localStorage.getItem('lang') ? 
-    setLang(localStorage.getItem('lang')) : 
-    localStorage.setItem('lang', language);
-    setLang(localStorage.getItem('lang'))
+    const defaultLanguage = "en-us";
+    const language = localStorage.getItem('lang')
+      ? setLang(localStorage.getItem('lang'))
+      : localStorage.setItem('lang', defaultLanguage);
+        setLang(localStorage.getItem('lang'));
+
+    return language;
+
     // console.log(localStorage.getItem('lang'));
   }
 

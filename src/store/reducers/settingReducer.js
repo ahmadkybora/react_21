@@ -1,7 +1,9 @@
 import * as actions from '../actions/type';
 
 const initialState = {
-  lang:'',
+  lang: '',
+  icon: '',
+  name: '',
 }
 
 export default function (state = initialState, action) {
@@ -9,7 +11,9 @@ export default function (state = initialState, action) {
     case actions.UPDATE_LANG: {
         return {
             ...state,
-            lang: action.payload,
+            lang: action.payload.value,
+            icon: action.payload.icon,
+            name: action.payload.name,
         }
     }
     

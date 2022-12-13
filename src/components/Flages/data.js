@@ -1,23 +1,23 @@
 const languageData = [
     {
-      value: 'en-us',
-      name: 'English',
-      icon: <span class="fi fi-us"></span>
+      value: "en-us",
+      name: "English",
+      icon: "us",
     },
     {
       value: "fa-ir",
       name: "PERSIAN",
-      icon: <span class="fi fi-ir"></span>
+      icon: "ir",
     },
     {
       value: "de-de",
       name: "GERMAN",
-      icon: <span class="fi fi-de"></span>
+      icon: "de",
     },
     {
       value: "fr-ca",
       name: "FRENCH",
-      icon: <span class="fi fi-fr"></span>
+      icon: "fr",
     }
   ];
 
