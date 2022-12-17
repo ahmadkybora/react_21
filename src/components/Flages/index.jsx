@@ -44,6 +44,7 @@ const Flags = ({
     localStorage.setItem("lang", setCredits.value);
     localStorage.setItem("icon", setCredits.icon);
     dispatch(updateLang(setCredits));
+    handleClose();
   }
   // const frRef = useRef("FR");
   // const enRef = useRef("EN");
@@ -66,7 +67,6 @@ const Flags = ({
             {languageData.map((lang) => (
               <MenuItem 
                 onClick={() => {
-                  handleClose;
                   changeLanguage(lang)
                 }}>
                 <IconButton 

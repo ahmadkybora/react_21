@@ -50,6 +50,7 @@ import { FormattedMessage } from "react-intl";
 import { useSelector } from 'react-redux';
 
 const App = () => {
+  console.log();
   const routing = useRoutes(routes);
   // const lang = useSelector(state => state.settingReducer.lang);
   const [lang, setLang] = useState(useSelector(state => state.settingReducer.lang));
