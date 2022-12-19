@@ -122,7 +122,7 @@ const pages = [
     icon: <AccountCircleIcon color='dark' />,
   },
   { 
-    id: 3,
+    id: 3,  
     name: 'Popular ProductCategories',
     path: '/product-categories',
     icon: <AccountCircleIcon color='dark' />,
