@@ -111,34 +111,16 @@ const Articles = [
 const pages = [
   { 
     id: 1,
-    name: 'Popular Brands',
-    path: '/products',
-    icon: <AccountCircleIcon color='dark' />,
-  },
-  { 
-    id: 2,
     name: 'Popular Products',
     path: '/products',
     icon: <AccountCircleIcon color='dark' />,
   },
   { 
-    id: 3,  
-    name: 'Popular ProductCategories',
-    path: '/product-categories',
-    icon: <AccountCircleIcon color='dark' />,
-  },
-  { 
-    id: 4,
+    id: 2,
     name: 'Popular Articles',
     path: '/articles',
     icon: <SettingsIcon color='dark' />,
   }, 
-  { 
-    id: 5,
-    name: 'Popular ArticlesCategories',
-    path: '/articles-categories',
-    icon: <AccountCircleIcon color='dark' />,
-  },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
