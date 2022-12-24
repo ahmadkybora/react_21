@@ -173,6 +173,7 @@ const Product = () => {
                         variant="contained"
                         />
                 </Search>
+                <Typography textAlign="center">Popular Products</Typography>
             </Widget>
             <Card sx={{ display: 'flex' }}>
                 {credits.map((credit, index) => (

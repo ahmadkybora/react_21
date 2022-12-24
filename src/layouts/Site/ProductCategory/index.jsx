@@ -44,6 +44,7 @@ let credits = [
 const ProductCategory = () => {
     return(
         <Widget>
+            <Typography textAlign="center">Product Category</Typography>
             <Card sx={{ display: 'flex' }}>
                 {credits.map((credit, index) => (
                     <Card sx={{ display: 'flex' }}>

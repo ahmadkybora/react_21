@@ -111,18 +111,29 @@ const Articles = [
 const pages = [
   { 
     id: 1,
-    name: 'Popular Products',
-    path: '/products',
+    name: 'About',
+    path: '/about',
     icon: <AccountCircleIcon color='dark' />,
   },
   { 
     id: 2,
-    name: 'Popular Articles',
-    path: '/articles',
+    name: 'Contact',
+    path: '/contact',
     icon: <SettingsIcon color='dark' />,
   }, 
 ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [
+  {
+    id: 1,
+    name: 'Profile',
+    path: '/profile',
+  },
+  {
+    id: 2,
+    name: 'Logout',
+    path: '/logout'
+  }
+];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -266,8 +277,10 @@ const Header = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting.id} onClick={handleCloseUserMenu}>
+                  {/* <Typography textAlign="center"> */}
+                    <NavLink style={{ textDecoration: "none" }} to={setting.path}>{setting.name}</NavLink> 
+                  {/* </Typography> */}
                 </MenuItem>
               ))}
             </Menu>

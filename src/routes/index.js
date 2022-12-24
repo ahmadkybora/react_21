@@ -9,11 +9,16 @@ const ArticlesLayout = lazy(() => import('../layouts/Articles/Content'));
 const ProductLayout = lazy(() => import('../layouts/Product/Content'));
 const ProductsLayout = lazy(() => import("../layouts/Products/Content"));
 const LandPageLayout = lazy(() => import("../layouts/Site/LandPage"));
+const ProfileLayout = lazy(() => import("../layouts/Profile/Content"));
 
 /***** Pages ****/
 
 const Dashboard = lazy(() => import("../app/Panel/Dashboard"));
 const Users = lazy(() => import("../app/Panel/Users"));
+
+const Profile = lazy(() => import("../layouts/Profile/Content"));
+const ProfileEdit = lazy(() => import("../layouts/Profile/ProfileEdit"));
+const MyFavorites = lazy(() => import("../layouts/Profile/MyFavorites"));
 
 const Home = lazy(() => import("../app/Site/Home"));
 const Product = lazy(() => import("../app/Site/Product"));
@@ -68,6 +73,15 @@ const routes = [
     element: <ArticlesLayout />,
     children: [
       { path: "", exact: true, element: <Articles /> },
+    ],
+  },
+  {
+    path: "/profile",
+    element: <ProfileLayout />,
+    children: [
+      { path: "", exact: true, element: <Profile /> },
+      { path: "edit", exact: true, element: <ProfileEdit /> },
+      { path: "my-favorites", exact: true, element: <MyFavorites /> },
     ],
   },
   {

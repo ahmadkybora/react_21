@@ -44,6 +44,7 @@ let credits = [
 const Brand = () => {
     return(
         <Widget>
+            <Typography textAlign="center">Brands</Typography>
             <Card sx={{ display: 'flex' }}>
                 {credits.map((credit, index) => (
                     <Card sx={{ display: 'flex' }}>

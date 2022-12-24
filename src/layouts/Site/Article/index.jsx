@@ -173,6 +173,7 @@ const Article = () => {
                         variant="contained"
                         />
                 </Search>
+                <Typography textAlign="center">Popular Articles</Typography>
             </Widget>
             <Card sx={{ display: 'flex' }}>
                 {credits.map((credit, index) => (
