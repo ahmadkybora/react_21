@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from "../../Site/Header";
+import Header from "../Header";
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -19,15 +19,8 @@ import { NavLink } from "react-router-dom";
 const drawerWidth = 250;
 const data = [
     { name: 'Dashboard', path: 'dashboard', icon: <InboxIcon /> }, 
-    { name: 'Users', path: 'users', icon: <MailIcon /> }, 
-    { name: 'Brands', path: 'brands', icon: <MailIcon /> }, 
-    { name: 'Categories', path: 'categories', icon: <MailIcon /> }, 
-    { name: 'Products', path: 'products', icon: <MailIcon /> }, 
-    { name: 'Articles', path: 'articles', icon: <MailIcon /> }, 
-    { name: 'Orders', path: 'orders', icon: <MailIcon /> }, 
-    { name: 'Transactions', path: 'transactions', icon: <MailIcon /> }, 
-    { name: 'Settings', path: 'settings', icon: <MailIcon /> }, 
-    { name: 'Logout', path: 'logout', icon: <MailIcon /> }, 
+    { name: 'profileEdit', path: 'profile-edit', icon: <MailIcon /> }, 
+    { name: 'myFavorites', path: 'my-favorites', icon: <MailIcon /> }, 
 ];
   
 const DrawerHeader = styled('div')(({ theme }) => ({

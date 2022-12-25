@@ -80,7 +80,7 @@ const routes = [
     element: <ProfileLayout />,
     children: [
       { path: "", exact: true, element: <Profile /> },
-      { path: "edit", exact: true, element: <ProfileEdit /> },
+      { path: "profile-edit", exact: true, element: <ProfileEdit /> },
       { path: "my-favorites", exact: true, element: <MyFavorites /> },
     ],
   },
