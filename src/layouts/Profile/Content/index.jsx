@@ -11,7 +11,7 @@ const Profile = () => {
     return(
         <>
             <Sidebar />
-            <Dashboard />
+            {/* <Dashboard /> */}
             <Widget>
                 <Outlet />
             </Widget>

@@ -126,7 +126,7 @@ const settings = [
   {
     id: 1,
     name: 'Profile',
-    path: '/profile',
+    path: '/profile/dashboard',
   },
   {
     id: 2,

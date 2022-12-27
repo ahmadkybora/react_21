@@ -5,5 +5,6 @@ export default {
         'hello': 'سلام',
         'edit': 'اصلاح کننده {path} و شارژ مجدد',
         'confirm': 'تایید',
+        'editProfile' : 'ویرایش نمایه'
     }
 }

@@ -5,5 +5,6 @@ export default {
         'hello': 'Hallo',
         'edit': 'bearbeiten Sie {path} und Neuladen speichern',
         'confirm': 'bestätigen',
+        'editProfile' : 'Profil bearbeiten'
     }
 }

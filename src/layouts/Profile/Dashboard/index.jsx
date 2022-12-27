@@ -5,9 +5,7 @@ import {
   
 const Dashboard = () => {
     return(
-        <React.Fragment>
-            <Widget></Widget>
-        </React.Fragment>
+        <>Dashboard</>
     );
 }
 

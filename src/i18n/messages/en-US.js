@@ -5,5 +5,6 @@ export default {
         'hello': 'Hello',
         'edit': 'Edit {path} and save reload',
         'confirm': 'confirm',
+        'editProfile' : 'Edit Profile'
     }
 }

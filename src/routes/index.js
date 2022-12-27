@@ -16,7 +16,7 @@ const ProfileLayout = lazy(() => import("../layouts/Profile/Content"));
 const Dashboard = lazy(() => import("../app/Panel/Dashboard"));
 const Users = lazy(() => import("../app/Panel/Users"));
 
-const Profile = lazy(() => import("../layouts/Profile/Content"));
+const ProfileDashboard = lazy(() => import("../layouts/Profile/Dashboard"));
 const ProfileEdit = lazy(() => import("../layouts/Profile/ProfileEdit"));
 const MyFavorites = lazy(() => import("../layouts/Profile/MyFavorites"));
 
@@ -79,7 +79,7 @@ const routes = [
     path: "/profile",
     element: <ProfileLayout />,
     children: [
-      { path: "", exact: true, element: <Profile /> },
+      { path: "dashboard", exact: true, element: <ProfileDashboard /> },
       { path: "profile-edit", exact: true, element: <ProfileEdit /> },
       { path: "my-favorites", exact: true, element: <MyFavorites /> },
     ],
