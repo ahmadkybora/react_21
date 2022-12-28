@@ -22,8 +22,7 @@ export const error = (err) => {
             toast.error(msg);
             break;
 
-        case 403:
-        case 404:
+        case 403, 404:
             toast.error(msg);
             break;
 
@@ -37,8 +36,7 @@ export const error = (err) => {
             }
             break;
 
-        case 500:
-        case 503:
+        case 500, 503:
             toast.error(msg);
             break;
 

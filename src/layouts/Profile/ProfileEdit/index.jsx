@@ -23,7 +23,7 @@ const baseStyle = {
     backgroundColor: '#fafafa',
     color: '#bdbdbd',
     outline: 'none',
-    transition: 'border .24s ease-in-out'
+    transition: 'border .24s ease-in-out',
   };
   
   const focusedStyle = {
@@ -62,7 +62,7 @@ const baseStyle = {
       <div className="container">
         <div {...getRootProps({style})}>
           <input {...getInputProps()} />
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <p>Drag and drop your avatar</p>
         </div>
       </div>
     );
@@ -143,6 +143,26 @@ const ProfileEdit = () => {
                                 autoComplete="userName"
                                 />
                         </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                required
+                                fullWidth
+                                id="phoneNumber"
+                                label="Phone Number"
+                                name="phoneNumber"
+                                autoComplete="phoneNumber"
+                                />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                required
+                                fullWidth
+                                id="homeNumber"
+                                label="Home Number"
+                                name="homeNumber"
+                                autoComplete="homeNumber"
+                                />
+                        </Grid>
                         <Grid item xs={12}>
                             <TextField
                                 fullWidth
@@ -150,7 +170,7 @@ const ProfileEdit = () => {
                                 label="Home Address"
                                 multiline
                                 rows={4}
-                                defaultValue="Default Value"
+                                defaultValue=""
                                 />
                         </Grid>
                         <Grid item xs={12}>
@@ -160,7 +180,17 @@ const ProfileEdit = () => {
                                 label="Work Address"
                                 multiline
                                 rows={4}
-                                defaultValue="Default Value"
+                                defaultValue=""
+                                />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                fullWidth
+                                id="outlined-multiline-static"
+                                label="Description"
+                                multiline
+                                rows={4}
+                                defaultValue=""
                                 />
                         </Grid>
                         <Grid item xs={12}>
@@ -169,13 +199,26 @@ const ProfileEdit = () => {
                                 label="I want to receive inspiration, marketing promotions and updates via email."
                             />
                         </Grid>
+                        <Grid item xs={12} sm={6}
+                            sx={{                     
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                marginBottom: 3,
+                                }}
+                                >
+                            <Avatar sx={{ 
+                                height: '70px', 
+                                width: '70px',
+                                bgcolor: 'secondary.main',
+                                }} />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <StyledDropzone />
+                        </Grid>
                     </Grid>
-                    <StyledDropzone />
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                    </Avatar>
                     <Button
                         type="submit"
-                        fullWidth
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                         >

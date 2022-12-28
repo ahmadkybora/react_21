@@ -27,101 +27,102 @@ import { Flags } from '../../../components';
 import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const credits = [
-  { 
-    id: 1,
-    name: 'Profile',
-    path: 'profile',
-    icon: <AccountCircleIcon color='success' />,
-  },
-  { 
-    id: 2,
-    name: 'Setting',
-    path: 'setting',
-    icon: <SettingsIcon color='secondary' />,
-  }, 
-  { 
-    id: 3,
-    name: 'Logout',
-    path: 'logout',
-    icon: <LogoutIcon color='primary' />,
-  },
-  { 
-    id: 4,
-    name: 'Admin Panel',
-    path: '/panel/dashboard',
-    icon: <AdminPanelSettingsIcon color='dark' />,
-  },
-];
+// const credits = [
+//   { 
+//     id: 1,
+//     name: 'Profile',
+//     path: 'profile',
+//     icon: <AccountCircleIcon color='success' />,
+//   },
+//   { 
+//     id: 2,
+//     name: 'Setting',
+//     path: 'setting',
+//     icon: <SettingsIcon color='secondary' />,
+//   }, 
+//   { 
+//     id: 3,
+//     name: 'Logout',
+//     path: 'logout',
+//     icon: <LogoutIcon color='primary' />,
+//   },
+//   { 
+//     id: 4,
+//     name: 'Admin Panel',
+//     path: '/panel/dashboard',
+//     icon: <AdminPanelSettingsIcon color='dark' />,
+//   },
+// ];
 
-const Products = [
-  { 
-    id: 1,
-    name: 'Products',
-    path: '/products',
-    icon: <AccountCircleIcon color='success' />,
-  },
-  { 
-    id: 2,
-    name: 'Setting',
-    path: 'setting',
-    icon: <SettingsIcon color='secondary' />,
-  }, 
-  { 
-    id: 3,
-    name: 'Logout',
-    path: 'logout',
-    icon: <LogoutIcon color='primary' />,
-  },
-  { 
-    id: 4,
-    name: 'Admin Panel',
-    path: 'panel/dashboard',
-    icon: <AdminPanelSettingsIcon color='dark' />,
-  },
-];
+// const Products = [
+//   { 
+//     id: 1,
+//     name: 'Products',
+//     path: '/products',
+//     icon: <AccountCircleIcon color='success' />,
+//   },
+//   { 
+//     id: 2,
+//     name: 'Setting',
+//     path: 'setting',
+//     icon: <SettingsIcon color='secondary' />,
+//   }, 
+//   { 
+//     id: 3,
+//     name: 'Logout',
+//     path: 'logout',
+//     icon: <LogoutIcon color='primary' />,
+//   },
+//   { 
+//     id: 4,
+//     name: 'Admin Panel',
+//     path: 'panel/dashboard',
+//     icon: <AdminPanelSettingsIcon color='dark' />,
+//   },
+// ];
 
-const Articles = [
-  { 
-    id: 1,
-    name: 'Artcicles',
-    path: '/articles',
-    icon: <AccountCircleIcon color='success' />,
-  },
-  { 
-    id: 2,
-    name: 'Setting',
-    path: 'setting',
-    icon: <SettingsIcon color='secondary' />,
-  }, 
-  { 
-    id: 3,
-    name: 'Logout',
-    path: 'logout',
-    icon: <LogoutIcon color='primary' />,
-  },
-  { 
-    id: 4,
-    name: 'Admin Panel',
-    path: 'panel/dashboard',
-    icon: <AdminPanelSettingsIcon color='dark' />,
-  },
-];
+// const Articles = [
+//   { 
+//     id: 1,
+//     name: 'Artcicles',
+//     path: '/articles',
+//     icon: <AccountCircleIcon color='success' />,
+//   },
+//   { 
+//     id: 2,
+//     name: 'Setting',
+//     path: 'setting',
+//     icon: <SettingsIcon color='secondary' />,
+//   }, 
+//   { 
+//     id: 3,
+//     name: 'Logout',
+//     path: 'logout',
+//     icon: <LogoutIcon color='primary' />,
+//   },
+//   { 
+//     id: 4,
+//     name: 'Admin Panel',
+//     path: 'panel/dashboard',
+//     icon: <AdminPanelSettingsIcon color='dark' />,
+//   },
+// ];
 
-const pages = [
-  { 
-    id: 1,
-    name: 'About',
-    path: '/about',
-    icon: <AccountCircleIcon color='dark' />,
-  },
-  { 
-    id: 2,
-    name: 'Contact',
-    path: '/contact',
-    icon: <SettingsIcon color='dark' />,
-  }, 
-];
+// const pages = [
+//   { 
+//     id: 1,
+//     name: 'About',
+//     path: '/about',
+//     icon: <AccountCircleIcon color='dark' />,
+//   },
+//   { 
+//     id: 2,
+//     name: 'Contact',
+//     path: '/contact',
+//     icon: <SettingsIcon color='dark' />,
+//   }, 
+// ];
+
 const settings = [
   {
     id: 1,
@@ -247,16 +248,16 @@ const Header = ({ handleDrawerOpen }) => {
           >
             Home
           </Typography>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
+            {/* {pages.map((page) => (
               <Typography 
                 sx={{ mx: 3, display: 'block' }}
                 textAlign="center">
                 {page.icon}
                 <Link style={{ textDecoration: "none", color: "black" }} to={page.path}>{page.name}</Link>
               </Typography>
-            ))}
-          </Box> */}
+            ))} */}
+          {/* </Box> */}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

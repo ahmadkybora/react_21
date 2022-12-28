@@ -39,6 +39,10 @@ const Sidebar = () => {
       setOpen(true);
     };
   
+    const handleClose = () => {
+        setAnchorEl(null);    
+    };
+    
     const handleDrawerClose = () => {
       setOpen(false);
     };
