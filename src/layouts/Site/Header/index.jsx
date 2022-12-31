@@ -155,7 +155,7 @@ const Header = ({ handleDrawerOpen }) => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar component="nav">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {
