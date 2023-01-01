@@ -175,7 +175,11 @@ const Article = () => {
                 </Search>
                 <Typography textAlign="center">Popular Articles</Typography>
             </Widget>
-            <Card sx={{ display: 'flex' }}>
+            <Card sx={{ 
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-around'
+                }}>
                 {credits.map((credit, index) => (
                     <Card key={index} sx={{ maxWidth: 245, m: 2 }}>
                         <CardHeader

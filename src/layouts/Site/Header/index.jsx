@@ -158,7 +158,7 @@ const Header = ({ handleDrawerOpen }) => {
     <AppBar component="nav">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {
+          {/* {
             <IconButton
               size="large"
               edge="start"
@@ -169,7 +169,7 @@ const Header = ({ handleDrawerOpen }) => {
               >
               <MenuIcon />
             </IconButton>
-          }
+          } */}
           <HomeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"

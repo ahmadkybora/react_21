@@ -45,11 +45,25 @@ const Brand = () => {
     return(
         <Widget>
             <Typography textAlign="center">Brands</Typography>
-            <Card sx={{ display: 'flex' }}>
+            <Card sx={{ 
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignContent: 'center',
+                alignItems: 'center'
+                }}>
                 {credits.map((credit, index) => (
-                    <Card sx={{ display: 'flex' }}>
-                        <Box key={index} sx={{ m: 1, display: 'flex', flexDirection: 'column', backgroundColor: 'text.disabled', border: credit.border }}>
-                            <CardContent sx={{ flex: '1 0 auto' }}>
+                    <Card>
+                        <Box 
+                            key={index} 
+                            sx={{ 
+                                m: 1,
+                                backgroundColor: 'text.disabled',
+                                border: credit.border,
+                            }}>
+                            <CardContent sx={{ 
+                                    flex: '1 0 auto'
+                                    }}>
                                 <Typography component="div" variant="h5">
                                     {credit.icon}
                                     {credit.name}
